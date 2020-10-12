@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/gameboard.dir/gameboard.c.o  -o bin/gameboard  /usr/local/lib/libgtest.a -lpthread -lm 
