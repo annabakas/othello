@@ -9,8 +9,8 @@ typedef struct _othello_board_t {
     char board[ROWS][COLS];
 } othello_board_t;
 
-typedef struct _othello_board_copy_t {
-    char copy_board[ROWS][COLS];
+typedef struct _othello_board_copy_t{
+	char copy_board[ROWS][COLS];
 } othello_board_copy_t;
 
 

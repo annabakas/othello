@@ -28,14 +28,14 @@ void print_othello(othello_board_t* board) {
     }
 }
 
-void othello_copy(othello_board_t* board, othello_board_copy_t* copy_board) {
-    memcpy(&copy_board, &board, sizeof(board));
-    for(int x = 0; x < ROWS; x++) {
-        for(int y = 0; y < COLS; y++) {
-            printf("%c", copy_board -> copy_board[x][y]);
-        }
-        printf("\n");
-    }
+void othello_copy(othello_board_t* board, othello_board_copy_t* copy_board){
+	memcpy(&copy_board, &board, sizeof(board));
+	for(int x = 0; x < ROWS; x++){
+		for(int y = 0; y < COLS; y++){
+		printf("%c", copy_board -> copy_board[x][y]);
+		}
+	printf("\n");
+	}	
 }
 
 int main() {
@@ -44,7 +44,6 @@ int main() {
     othello_new(&board);
     othello_init(&board);
     othello_copy(&board, &copy_board);
-    printf("\n");
     print_othello(&board);
 }
 
