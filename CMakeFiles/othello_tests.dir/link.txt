@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/othello_tests.dir/othello_tests.cc.o CMakeFiles/othello_tests.dir/gameboard.c.o  -o bin/othello_tests  /usr/local/lib/libgtest.a -lpthread -lm 

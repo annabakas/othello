@@ -25,3 +25,6 @@ include_directories(${GTEST_INCLUDE_DIRS})
 
 add_executable(gameboard gameboard.c)
 target_link_libraries(gameboard ${GTEST_LIBRARIES} -lpthread -lm)
+
+add_executable(othello_tests othello_tests.cc gameboard.c)
+target_link_libraries(othello_tests ${GTEST_LIBRARIES} -lpthread -lm)

@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named othello_tests
+
+# Build rule for target.
+othello_tests: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 othello_tests
+.PHONY : othello_tests
+
+# fast build rule for target.
+othello_tests/fast:
+	$(MAKE) -f CMakeFiles/othello_tests.dir/build.make CMakeFiles/othello_tests.dir/build
+.PHONY : othello_tests/fast
+
+#=============================================================================
 # Target rules for targets named gameboard
 
 # Build rule for target.
@@ -129,6 +142,7 @@ gameboard.o: gameboard.c.o
 
 # target to build an object file
 gameboard.c.o:
+	$(MAKE) -f CMakeFiles/othello_tests.dir/build.make CMakeFiles/othello_tests.dir/gameboard.c.o
 	$(MAKE) -f CMakeFiles/gameboard.dir/build.make CMakeFiles/gameboard.dir/gameboard.c.o
 .PHONY : gameboard.c.o
 
@@ -138,6 +152,7 @@ gameboard.i: gameboard.c.i
 
 # target to preprocess a source file
 gameboard.c.i:
+	$(MAKE) -f CMakeFiles/othello_tests.dir/build.make CMakeFiles/othello_tests.dir/gameboard.c.i
 	$(MAKE) -f CMakeFiles/gameboard.dir/build.make CMakeFiles/gameboard.dir/gameboard.c.i
 .PHONY : gameboard.c.i
 
@@ -147,8 +162,36 @@ gameboard.s: gameboard.c.s
 
 # target to generate assembly for a file
 gameboard.c.s:
+	$(MAKE) -f CMakeFiles/othello_tests.dir/build.make CMakeFiles/othello_tests.dir/gameboard.c.s
 	$(MAKE) -f CMakeFiles/gameboard.dir/build.make CMakeFiles/gameboard.dir/gameboard.c.s
 .PHONY : gameboard.c.s
+
+othello_tests.o: othello_tests.cc.o
+
+.PHONY : othello_tests.o
+
+# target to build an object file
+othello_tests.cc.o:
+	$(MAKE) -f CMakeFiles/othello_tests.dir/build.make CMakeFiles/othello_tests.dir/othello_tests.cc.o
+.PHONY : othello_tests.cc.o
+
+othello_tests.i: othello_tests.cc.i
+
+.PHONY : othello_tests.i
+
+# target to preprocess a source file
+othello_tests.cc.i:
+	$(MAKE) -f CMakeFiles/othello_tests.dir/build.make CMakeFiles/othello_tests.dir/othello_tests.cc.i
+.PHONY : othello_tests.cc.i
+
+othello_tests.s: othello_tests.cc.s
+
+.PHONY : othello_tests.s
+
+# target to generate assembly for a file
+othello_tests.cc.s:
+	$(MAKE) -f CMakeFiles/othello_tests.dir/build.make CMakeFiles/othello_tests.dir/othello_tests.cc.s
+.PHONY : othello_tests.cc.s
 
 # Help Target
 help:
@@ -158,10 +201,14 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
+	@echo "... othello_tests"
 	@echo "... gameboard"
 	@echo "... gameboard.o"
 	@echo "... gameboard.i"
 	@echo "... gameboard.s"
+	@echo "... othello_tests.o"
+	@echo "... othello_tests.i"
+	@echo "... othello_tests.s"
 .PHONY : help
 
 
