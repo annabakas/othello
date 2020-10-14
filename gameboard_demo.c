@@ -2,12 +2,9 @@
 #include <stdlib.h>
 
 #include "gameboard.h"
-
+othello_board_t* othello[8][8];
 int main() {
-    othello_board_t board;
-    othello_board_copy_t copy_board;
-    othello_new(&board);
-    othello_copy(&board, &copy_board);
-    printf("\n");
-    print_othello(&board);
+	othello_new();
+	print_othello();
+    
 }
