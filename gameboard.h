@@ -6,7 +6,7 @@
 #define COLS 8
 
 typedef struct _othello_board_t {
-    char board[ROWS][COLS];
+    char othello[ROWS][COLS];
 } othello_board_t;
 
 typedef struct _othello_board_copy_t {
@@ -16,11 +16,11 @@ typedef struct _othello_board_copy_t {
 
 extern void othello_new(othello_board_t *board);;
 
-extern void othello_init(othello_board_t* board);
-
 extern void othello_copy(othello_board_t* board, othello_board_copy_t* copy_board);
 
 extern void print_othello(othello_board_t *board);
+
+extern int board_full(othello_board_t *board);
 
 #endif
 

@@ -124,17 +124,17 @@ othello_tests/fast:
 .PHONY : othello_tests/fast
 
 #=============================================================================
-# Target rules for targets named gameboard
+# Target rules for targets named gameboard_demo
 
 # Build rule for target.
-gameboard: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 gameboard
-.PHONY : gameboard
+gameboard_demo: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 gameboard_demo
+.PHONY : gameboard_demo
 
 # fast build rule for target.
-gameboard/fast:
-	$(MAKE) -f CMakeFiles/gameboard.dir/build.make CMakeFiles/gameboard.dir/build
-.PHONY : gameboard/fast
+gameboard_demo/fast:
+	$(MAKE) -f CMakeFiles/gameboard_demo.dir/build.make CMakeFiles/gameboard_demo.dir/build
+.PHONY : gameboard_demo/fast
 
 gameboard.o: gameboard.c.o
 
@@ -143,7 +143,7 @@ gameboard.o: gameboard.c.o
 # target to build an object file
 gameboard.c.o:
 	$(MAKE) -f CMakeFiles/othello_tests.dir/build.make CMakeFiles/othello_tests.dir/gameboard.c.o
-	$(MAKE) -f CMakeFiles/gameboard.dir/build.make CMakeFiles/gameboard.dir/gameboard.c.o
+	$(MAKE) -f CMakeFiles/gameboard_demo.dir/build.make CMakeFiles/gameboard_demo.dir/gameboard.c.o
 .PHONY : gameboard.c.o
 
 gameboard.i: gameboard.c.i
@@ -153,7 +153,7 @@ gameboard.i: gameboard.c.i
 # target to preprocess a source file
 gameboard.c.i:
 	$(MAKE) -f CMakeFiles/othello_tests.dir/build.make CMakeFiles/othello_tests.dir/gameboard.c.i
-	$(MAKE) -f CMakeFiles/gameboard.dir/build.make CMakeFiles/gameboard.dir/gameboard.c.i
+	$(MAKE) -f CMakeFiles/gameboard_demo.dir/build.make CMakeFiles/gameboard_demo.dir/gameboard.c.i
 .PHONY : gameboard.c.i
 
 gameboard.s: gameboard.c.s
@@ -163,8 +163,35 @@ gameboard.s: gameboard.c.s
 # target to generate assembly for a file
 gameboard.c.s:
 	$(MAKE) -f CMakeFiles/othello_tests.dir/build.make CMakeFiles/othello_tests.dir/gameboard.c.s
-	$(MAKE) -f CMakeFiles/gameboard.dir/build.make CMakeFiles/gameboard.dir/gameboard.c.s
+	$(MAKE) -f CMakeFiles/gameboard_demo.dir/build.make CMakeFiles/gameboard_demo.dir/gameboard.c.s
 .PHONY : gameboard.c.s
+
+gameboard_demo.o: gameboard_demo.c.o
+
+.PHONY : gameboard_demo.o
+
+# target to build an object file
+gameboard_demo.c.o:
+	$(MAKE) -f CMakeFiles/gameboard_demo.dir/build.make CMakeFiles/gameboard_demo.dir/gameboard_demo.c.o
+.PHONY : gameboard_demo.c.o
+
+gameboard_demo.i: gameboard_demo.c.i
+
+.PHONY : gameboard_demo.i
+
+# target to preprocess a source file
+gameboard_demo.c.i:
+	$(MAKE) -f CMakeFiles/gameboard_demo.dir/build.make CMakeFiles/gameboard_demo.dir/gameboard_demo.c.i
+.PHONY : gameboard_demo.c.i
+
+gameboard_demo.s: gameboard_demo.c.s
+
+.PHONY : gameboard_demo.s
+
+# target to generate assembly for a file
+gameboard_demo.c.s:
+	$(MAKE) -f CMakeFiles/gameboard_demo.dir/build.make CMakeFiles/gameboard_demo.dir/gameboard_demo.c.s
+.PHONY : gameboard_demo.c.s
 
 othello_tests.o: othello_tests.cc.o
 
@@ -202,10 +229,13 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... othello_tests"
-	@echo "... gameboard"
+	@echo "... gameboard_demo"
 	@echo "... gameboard.o"
 	@echo "... gameboard.i"
 	@echo "... gameboard.s"
+	@echo "... gameboard_demo.o"
+	@echo "... gameboard_demo.i"
+	@echo "... gameboard_demo.s"
 	@echo "... othello_tests.o"
 	@echo "... othello_tests.i"
 	@echo "... othello_tests.s"

@@ -145,7 +145,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=caesar-cipher-part-2-annabakas
+CMAKE_PROJECT_NAME:STATIC=gameboard_demo
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -229,6 +229,12 @@ caesar-cipher-part-2-annabakas_BINARY_DIR:STATIC=/home/annabakas/othello-project
 
 //Value Computed by CMake
 caesar-cipher-part-2-annabakas_SOURCE_DIR:STATIC=/home/annabakas/othello-project-annabakas
+
+//Value Computed by CMake
+gameboard_demo_BINARY_DIR:STATIC=/home/annabakas/othello-project-annabakas
+
+//Value Computed by CMake
+gameboard_demo_SOURCE_DIR:STATIC=/home/annabakas/othello-project-annabakas
 
 
 ########################

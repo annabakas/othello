@@ -6,19 +6,3 @@
 
 #IncludeRegexTransform: 
 
-/home/annabakas/othello-project-annabakas/gameboard.h
-stdio.h
--
-
-/home/annabakas/othello-project-annabakas/gameboard.hh
-gameboard.h
-/home/annabakas/othello-project-annabakas/gameboard.h
-
-/home/annabakas/othello-project-annabakas/othello_tests.cc
-gtest/gtest.h
--
-gameboard.hh
-/home/annabakas/othello-project-annabakas/gameboard.hh
-stdio.h
--
-

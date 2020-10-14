@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/annabakas/othello-project-annabakas/gameboard.c
+gameboard.h
+/home/annabakas/othello-project-annabakas/gameboard.h
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+
+/home/annabakas/othello-project-annabakas/gameboard.h
+stdio.h
+-
+

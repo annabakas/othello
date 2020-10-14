@@ -54,7 +54,7 @@ CMAKE_BINARY_DIR = /home/annabakas/othello-project-annabakas
 
 # The main recursive "all" target.
 all: CMakeFiles/othello_tests.dir/all
-all: CMakeFiles/gameboard.dir/all
+all: CMakeFiles/gameboard_demo.dir/all
 
 .PHONY : all
 
@@ -65,7 +65,7 @@ preinstall:
 
 # The main recursive "clean" target.
 clean: CMakeFiles/othello_tests.dir/clean
-clean: CMakeFiles/gameboard.dir/clean
+clean: CMakeFiles/gameboard_demo.dir/clean
 
 .PHONY : clean
 
@@ -76,7 +76,7 @@ clean: CMakeFiles/gameboard.dir/clean
 CMakeFiles/othello_tests.dir/all:
 	$(MAKE) -f CMakeFiles/othello_tests.dir/build.make CMakeFiles/othello_tests.dir/depend
 	$(MAKE) -f CMakeFiles/othello_tests.dir/build.make CMakeFiles/othello_tests.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/annabakas/othello-project-annabakas/CMakeFiles --progress-num=3,4,5 "Built target othello_tests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/annabakas/othello-project-annabakas/CMakeFiles --progress-num=4,5,6 "Built target othello_tests"
 .PHONY : CMakeFiles/othello_tests.dir/all
 
 # Build rule for subdir invocation for target.
@@ -97,31 +97,31 @@ CMakeFiles/othello_tests.dir/clean:
 .PHONY : CMakeFiles/othello_tests.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/gameboard.dir
+# Target rules for target CMakeFiles/gameboard_demo.dir
 
 # All Build rule for target.
-CMakeFiles/gameboard.dir/all:
-	$(MAKE) -f CMakeFiles/gameboard.dir/build.make CMakeFiles/gameboard.dir/depend
-	$(MAKE) -f CMakeFiles/gameboard.dir/build.make CMakeFiles/gameboard.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/annabakas/othello-project-annabakas/CMakeFiles --progress-num=1,2 "Built target gameboard"
-.PHONY : CMakeFiles/gameboard.dir/all
+CMakeFiles/gameboard_demo.dir/all:
+	$(MAKE) -f CMakeFiles/gameboard_demo.dir/build.make CMakeFiles/gameboard_demo.dir/depend
+	$(MAKE) -f CMakeFiles/gameboard_demo.dir/build.make CMakeFiles/gameboard_demo.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/annabakas/othello-project-annabakas/CMakeFiles --progress-num=1,2,3 "Built target gameboard_demo"
+.PHONY : CMakeFiles/gameboard_demo.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/gameboard.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/annabakas/othello-project-annabakas/CMakeFiles 2
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/gameboard.dir/all
+CMakeFiles/gameboard_demo.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/annabakas/othello-project-annabakas/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/gameboard_demo.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/annabakas/othello-project-annabakas/CMakeFiles 0
-.PHONY : CMakeFiles/gameboard.dir/rule
+.PHONY : CMakeFiles/gameboard_demo.dir/rule
 
 # Convenience name for target.
-gameboard: CMakeFiles/gameboard.dir/rule
+gameboard_demo: CMakeFiles/gameboard_demo.dir/rule
 
-.PHONY : gameboard
+.PHONY : gameboard_demo
 
 # clean rule for target.
-CMakeFiles/gameboard.dir/clean:
-	$(MAKE) -f CMakeFiles/gameboard.dir/build.make CMakeFiles/gameboard.dir/clean
-.PHONY : CMakeFiles/gameboard.dir/clean
+CMakeFiles/gameboard_demo.dir/clean:
+	$(MAKE) -f CMakeFiles/gameboard_demo.dir/build.make CMakeFiles/gameboard_demo.dir/clean
+.PHONY : CMakeFiles/gameboard_demo.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.
