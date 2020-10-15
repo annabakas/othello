@@ -6,17 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/annabakas/othello-project-annabakas/gameboard.c
-gameboard.h
 /home/annabakas/othello-project-annabakas/gameboard.h
 stdio.h
 -
-string.h
+
+/home/annabakas/othello-project-annabakas/gameboard_demo.c
+stdio.h
 -
 stdlib.h
 -
-
+gameboard.h
 /home/annabakas/othello-project-annabakas/gameboard.h
-stdio.h
--
 

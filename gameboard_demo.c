@@ -3,9 +3,11 @@
 
 #include "gameboard.h"
 othello_board_t* othello[8][8];
+othello_board_t* copy[8][8];
 int main() {
     othello_new();
     displayBoard();
     printf("%d\n",board_full());
     copyBoard();
+    printf("%d\n",compareBoards());
 }

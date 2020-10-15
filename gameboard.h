@@ -11,6 +11,8 @@ typedef struct _othello_board_t {
 
 extern othello_board_t* board[ROWS][COLS];
 
+extern othello_board_t* copy[ROWS][COLS];
+
 extern void othello_new();
 
 extern void copyBoard();
@@ -21,5 +23,6 @@ extern int board_full();
 
 extern int is_valid_position(int row, int col);
 
+extern int compareBoards();
 #endif
 

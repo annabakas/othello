@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 othello_board_t* board[8][8];
-
+othello_board_t* copy[8][8];
 //Initializes gameboard with four center pieces
 void othello_new() {
     for(int x = 0; x < ROWS; x++) {
@@ -57,7 +57,7 @@ void displayBoard() {
 
 //Copies othello board into another board
 void copyBoard() {
-    othello_board_t *copy[8][8];
+    //othello_board_t *copy[8][8];
     for(int row = 0; row < ROWS; row++) {
         for(int col = 0; col < ROWS; col++) {
             copy[row][col] = board[row][col];
@@ -80,9 +80,28 @@ int board_full() {
     return 1;
 }
 
+//See if position player entered is valid or not
 int is_valid_position(int row, int col) {
     if(row < 0 || row >= 8 || col <0 || col >= 8) {
         return 0;
     }
     return 1;
+}
+
+//Comparing if two boards are identical
+//Return 0 if they aren't and 1 if they are
+int compareBoards(){
+	int row = 0;
+	int col = 0;
+	for(row = 0; row < ROWS; row++){
+		for(col = 0; col < COLS; col++){
+			char b[3] = {board[row][col] -> color};
+			char c[3] = {copy[row][col] -> color};
+			if(board[row][col] -> color != copy[row][col] -> color){
+				return 0;
+			}
+		}
+	}
+
+	return 1;
 }
