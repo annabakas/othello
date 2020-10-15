@@ -43,6 +43,13 @@ TEST(GameboardTests, InitializedBlanks) {
         }
     }
 }
+
+//Testing that position entered is valid
+TEST(GameboardTests, ValidPosition) {
+    ASSERT_EQ(0, is_valid_position(10,2));
+    ASSERT_EQ(1, is_valid_position(0,1));
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();

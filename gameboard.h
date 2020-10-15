@@ -7,7 +7,7 @@
 
 typedef struct _othello_board_t {
     char color;
-}othello_board_t;
+} othello_board_t;
 
 extern othello_board_t* board[ROWS][COLS];
 
@@ -15,9 +15,11 @@ extern void othello_new();
 
 extern void copyBoard();
 
-extern void print_othello();
+extern void displayBoard();
 
 extern int board_full();
+
+extern int is_valid_position(int row, int col);
 
 #endif
 
