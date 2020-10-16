@@ -6,4 +6,9 @@ CMakeFiles/gameboard_demo.dir/gameboard.c.o: gameboard.h
 
 CMakeFiles/gameboard_demo.dir/gameboard_demo.c.o: gameboard.h
 CMakeFiles/gameboard_demo.dir/gameboard_demo.c.o: gameboard_demo.c
+CMakeFiles/gameboard_demo.dir/gameboard_demo.c.o: player.h
+
+CMakeFiles/gameboard_demo.dir/player.c.o: gameboard.h
+CMakeFiles/gameboard_demo.dir/player.c.o: player.c
+CMakeFiles/gameboard_demo.dir/player.c.o: player.h
 

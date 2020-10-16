@@ -220,6 +220,33 @@ othello_tests.cc.s:
 	$(MAKE) -f CMakeFiles/othello_tests.dir/build.make CMakeFiles/othello_tests.dir/othello_tests.cc.s
 .PHONY : othello_tests.cc.s
 
+player.o: player.c.o
+
+.PHONY : player.o
+
+# target to build an object file
+player.c.o:
+	$(MAKE) -f CMakeFiles/gameboard_demo.dir/build.make CMakeFiles/gameboard_demo.dir/player.c.o
+.PHONY : player.c.o
+
+player.i: player.c.i
+
+.PHONY : player.i
+
+# target to preprocess a source file
+player.c.i:
+	$(MAKE) -f CMakeFiles/gameboard_demo.dir/build.make CMakeFiles/gameboard_demo.dir/player.c.i
+.PHONY : player.c.i
+
+player.s: player.c.s
+
+.PHONY : player.s
+
+# target to generate assembly for a file
+player.c.s:
+	$(MAKE) -f CMakeFiles/gameboard_demo.dir/build.make CMakeFiles/gameboard_demo.dir/player.c.s
+.PHONY : player.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -239,6 +266,9 @@ help:
 	@echo "... othello_tests.o"
 	@echo "... othello_tests.i"
 	@echo "... othello_tests.s"
+	@echo "... player.o"
+	@echo "... player.i"
+	@echo "... player.s"
 .PHONY : help
 
 

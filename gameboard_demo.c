@@ -2,12 +2,14 @@
 #include <stdlib.h>
 
 #include "gameboard.h"
-othello_board_t* othello[8][8];
-othello_board_t* copy[8][8];
+#include "player.h"
+
 int main() {
+    player_t first;
     othello_new();
     displayBoard();
     printf("%d\n",board_full());
     copyBoard();
     printf("%d\n",compareBoards());
+    init_first_player(&first);
 }

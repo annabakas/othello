@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_C
   "/home/annabakas/othello-project-annabakas/gameboard.c" "/home/annabakas/othello-project-annabakas/CMakeFiles/gameboard_demo.dir/gameboard.c.o"
   "/home/annabakas/othello-project-annabakas/gameboard_demo.c" "/home/annabakas/othello-project-annabakas/CMakeFiles/gameboard_demo.dir/gameboard_demo.c.o"
+  "/home/annabakas/othello-project-annabakas/player.c" "/home/annabakas/othello-project-annabakas/CMakeFiles/gameboard_demo.dir/player.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

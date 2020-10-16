@@ -1,1 +1,1 @@
-/usr/bin/cc   -rdynamic CMakeFiles/gameboard_demo.dir/gameboard_demo.c.o CMakeFiles/gameboard_demo.dir/gameboard.c.o  -o bin/gameboard_demo  /usr/local/lib/libgtest.a -lpthread -lm 
+/usr/bin/cc   -rdynamic CMakeFiles/gameboard_demo.dir/gameboard_demo.c.o CMakeFiles/gameboard_demo.dir/gameboard.c.o CMakeFiles/gameboard_demo.dir/player.c.o  -o bin/gameboard_demo  /usr/local/lib/libgtest.a -lpthread -lm 

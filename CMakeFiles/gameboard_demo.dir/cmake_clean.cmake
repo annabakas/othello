@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/gameboard_demo.dir/gameboard.c.o"
   "CMakeFiles/gameboard_demo.dir/gameboard_demo.c.o"
+  "CMakeFiles/gameboard_demo.dir/player.c.o"
   "bin/gameboard_demo"
   "bin/gameboard_demo.pdb"
 )
