@@ -4,12 +4,10 @@
 #include "gameboard.h"
 #include "player.h"
 
+int moves[][8];
+player_t first;
 int main() {
-    player_t first;
     othello_new();
-    displayBoard();
-    //printf("%d\n",board_full());
-    copyBoard();
-    //printf("%d\n",compareBoards());
-    init_first_player(&first);
+    if(playerTurn++ % 2) {
+    }
 }

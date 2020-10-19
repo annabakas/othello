@@ -12,10 +12,10 @@ void othello_new() {
         for(int g = 0; g < COLS; g++) {
             board[x][g] = malloc(sizeof(char*));
             if((x == 3 && g == 3) || (x == 4 && g == 4)) {
-                board[x][g] -> color = 'X'; //Player A
+                board[x][g] -> color = 'W'; //Player A
             }
             else if((x == 3 && g == 4) || (x == 4 && g == 3)) {
-                board[x][g] -> color = '0'; //Player B
+                board[x][g] -> color = 'B'; //Player B
             }
             else {
                 board[x][g] -> color = ' ';

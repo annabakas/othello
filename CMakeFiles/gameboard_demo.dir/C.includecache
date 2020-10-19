@@ -6,9 +6,29 @@
 
 #IncludeRegexTransform: 
 
+/home/annabakas/othello-project-annabakas/gameboard.c
+gameboard.h
 /home/annabakas/othello-project-annabakas/gameboard.h
 stdio.h
 -
+string.h
+-
+stdlib.h
+-
+
+/home/annabakas/othello-project-annabakas/gameboard.h
+stdio.h
+-
+
+/home/annabakas/othello-project-annabakas/gameboard_demo.c
+stdio.h
+-
+stdlib.h
+-
+gameboard.h
+/home/annabakas/othello-project-annabakas/gameboard.h
+player.h
+/home/annabakas/othello-project-annabakas/player.h
 
 /home/annabakas/othello-project-annabakas/player.c
 player.h
