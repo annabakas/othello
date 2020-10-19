@@ -7,8 +7,6 @@ typedef struct _player_t {
     char token;
 } player_t;
 
-extern int playerTurn;
-
 extern void init_first_player(player_t *first);
 extern void init_second_player(player_t *second);
 
