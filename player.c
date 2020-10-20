@@ -6,20 +6,26 @@
 
 void init_first_player(player_t *first) {
     char name[NAMELEN+1];
-
+    int len = 0;
     printf("Enter name of Player 1: ");
     fgets(name,NAMELEN, stdin);
+    len = strlen(name);
+    if(name[len-1] == '\n') {
+        name[len-1] = 0;
+    }
     strncpy(first -> name, name, NAMELEN);
-    fflush(stdin);
     first -> token = 'W';
     first -> score = 0;
 }
 
 void init_second_player(player_t *second) {
     char name[NAMELEN+1];
-
+    int len = 0;
     printf("Enter name of Player 2: ");
     fgets(name, NAMELEN, stdin);
+    if(name[len-1] == '\n') {
+        name[len-1] = 0;
+    }
     strncpy(second -> name, name, NAMELEN);
     second -> token = 'B';
     second -> score = 0;
@@ -51,7 +57,7 @@ int make_move(player_t *first) {
     char y[10];
     int row, col;
     int valid = 0;
-    
+
     printf("Enter x coordinate for the piece you want to place: ");
     fgets(x,10,stdin);
 
@@ -69,11 +75,10 @@ int make_move(player_t *first) {
     return 0;
 }
 
-void swap_players(player_t **first, player_t **second){
-	player_t *temp = *first;
-	*first = *second;
-	*second = temp;
-	printf("Swap success\n");
+void swap_players(player_t **first, player_t **second) {
+    player_t *temp = *first;
+    *first = *second;
+    *second = temp;
 }
 
 
