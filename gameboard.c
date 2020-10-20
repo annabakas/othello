@@ -4,8 +4,8 @@
 #include <string.h>
 #include <stdlib.h>
 
-othello_board_t* board[8][8];
-othello_board_t* copy[8][8];
+othello_board_t *board[8][8];
+othello_board_t *copy[8][8];
 //Initializes gameboard with four center pieces
 void othello_new() {
     for(int x = 0; x < ROWS; x++) {

@@ -10,17 +10,15 @@
 stdio.h
 -
 
-/home/annabakas/othello-project-annabakas/player.c
-player.h
-/home/annabakas/othello-project-annabakas/player.h
+/home/annabakas/othello-project-annabakas/gameboard_demo.c
 stdio.h
--
-stdio.h
--
-string.h
 -
 stdlib.h
 -
+gameboard.h
+/home/annabakas/othello-project-annabakas/gameboard.h
+player.h
+/home/annabakas/othello-project-annabakas/player.h
 
 /home/annabakas/othello-project-annabakas/player.h
 gameboard.h

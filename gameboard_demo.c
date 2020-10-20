@@ -8,7 +8,6 @@ int quit = 0;
 
 int moves[ROWS][COLS] = {0};
 player_t first, second, other, current;
-othello_board_t *board[ROWS][COLS];
 
 int main(void) {
     othello_new();
