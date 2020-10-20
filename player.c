@@ -30,33 +30,16 @@ void init_second_player(player_t *second) {
     second -> token = 'B';
     second -> score = 0;
 }
-int valid_moves(int moves[][COLS], char player) {
-    int rowInc = 0;
-    int colInc = 0;
-    int row = 0;
-    int col = 0;
-    int x = 0;
-    int y = 0;
-    int no_of_moves = 0;
 
-    // Sets opponent
-    char opponent = (player == 'W')? 'B' : 'W';
-
-    //Initialize moves array to zero
-    for(row = 0; row < 8; row++) {
-        for(col = 0; col < 8; col++) {
-            moves[row][col] = 0;
-        }
-    }
-
+int apply_move(player_t *first, othello_board_t *board, int x, int y, char token) {
 
 }
-
-int make_move(player_t *first) {
+int make_move(player_t *first, othello_board_t *board) {
     char x[10];
     char y[10];
     int row, col;
     int valid = 0;
+
 
     printf("Enter x coordinate for the piece you want to place: ");
     fgets(x,10,stdin);
@@ -69,8 +52,8 @@ int make_move(player_t *first) {
     col = atoi(y);
     col --;
 
-    if(is_valid_position(row, col) == 0) {
-        printf("Coordinates are not valid. Please try again: \n");
+    if(is_valid_position(row, col) != 0) {
+        apply_move(first, board, row, col, first -> token);
     }
     return 0;
 }

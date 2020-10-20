@@ -3,11 +3,16 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+
 void init_first_player(player_t *first) {
     char name[NAMELEN+1];
-
+    int len = 0;
     printf("Enter name of Player 1: ");
-    scanf("%s",name);
+    fgets(name,NAMELEN, stdin);
+    len = strlen(name);
+    if(name[len-1] == '\n') {
+        name[len-1] = 0;
+    }
     strncpy(first -> name, name, NAMELEN);
     first -> token = 'W';
     first -> score = 0;
@@ -15,60 +20,48 @@ void init_first_player(player_t *first) {
 
 void init_second_player(player_t *second) {
     char name[NAMELEN+1];
-
+    int len = 0;
     printf("Enter name of Player 2: ");
-    scanf("%s", name);
+    fgets(name, NAMELEN, stdin);
+    if(name[len-1] == '\n') {
+        name[len-1] = 0;
+    }
     strncpy(second -> name, name, NAMELEN);
     second -> token = 'B';
     second -> score = 0;
 }
 
-int valid_moves(int moves[][COLS], char player) {
-    int rowInc = 0;
-    int colInc = 0;
-    int row = 0;
-    int col = 0;
-    int x = 0;
-    int y = 0;
-    int no_of_moves = 0;
-
-    // Sets opponent
-    char opponent = (player == 'W')? 'B' : 'W';
-
-    //Initialize moves array to zero
-    for(row = 0; row < 8; row++) {
-        for(col = 0; col < 8; col++) {
-            moves[row][col] = 0;
-        }
-    }
-
+int apply_move(player_t *first, othello_board_t *board, int x, int y, char token){
 
 }
-
-int make_move(player_t *first) {
-    int valid = 0;
+int make_move(player_t *first, othello_board_t *board) {
     char x[10];
     char y[10];
-
+    int row, col;
+    int valid = 0;
     
-	    printf("Enter x coordinate for the piece you want to place: ");
-	    fgets(x,10,stdin);
 
-	    printf("Enter y coordinate for the piece you want to place: ");
-	    fgets(y,10,stdin);
+    printf("Enter x coordinate for the piece you want to place: ");
+    fgets(x,10,stdin);
 
+    printf("Enter y coordinate for the piece you want to place: ");
+    fgets(y,10,stdin);
 
-            int row, col;
-            row = atoi(x);
-	    col = atoi(y);
+    row = atoi(x);
+    row--;
+    col = atoi(y);
+    col --;
 
-            if(is_valid_position(row, col) == 0) {
-                printf("Coordinates are not valid. Please try again: \n");
-            }
-            else {
-                valid = 1;
-            }
-	    return 0;
+    if(is_valid_position(row, col) != 0) {
+        apply_move(first, board, row, col, first -> token);
     }
+    return 0;
+}
+
+void swap_players(player_t **first, player_t **second) {
+    player_t *temp = *first;
+    *first = *second;
+    *second = temp;
+}
 
 
