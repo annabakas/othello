@@ -2,24 +2,20 @@
 #define _GAMEBOARD_H_
 
 #include <stdio.h>
-#define ROWS 8
-#define COLS 8
+#define SIZE 8
+#define PLAYER_A 'A'
+#define PLAYER_B 'B'
+#define EMPTY ' '
 
 typedef struct _othello_board_t {
-    char color;
+    char board[SIZE][SIZE];
 } othello_board_t;
 
-extern othello_board_t* board[ROWS][COLS];
+extern void othello_new(othello_board_t *board);
 
-extern othello_board_t* copy[ROWS][COLS];
+extern void displayBoard(othello_board_t *board);
 
-extern void othello_new();
-
-extern void copyBoard();
-
-extern void displayBoard();
-
-extern int board_full();
+extern int board_full(othello_board_t *board);
 
 extern int is_valid_position(int row, int col);
 

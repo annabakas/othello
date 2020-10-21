@@ -14,7 +14,7 @@ void init_first_player(player_t *first) {
         name[len-1] = 0;
     }
     strncpy(first -> name, name, NAMELEN);
-    first -> token = 'W';
+    first -> token = PLAYER_A;
     first -> score = 0;
 }
 
@@ -23,14 +23,15 @@ void init_second_player(player_t *second) {
     int len = 0;
     printf("Enter name of Player 2: ");
     fgets(name, NAMELEN, stdin);
+    len = strlen(name);
     if(name[len-1] == '\n') {
         name[len-1] = 0;
     }
     strncpy(second -> name, name, NAMELEN);
-    second -> token = 'B';
+    second -> token = PLAYER_B;
     second -> score = 0;
 }
-
+/*
 int apply_move(player_t *first, othello_board_t *board, int x, int y, char token) {
     int pieces_captured = 0;
     int current_row = 0;
@@ -68,7 +69,7 @@ int apply_move(player_t *first, othello_board_t *board, int x, int y, char token
     else {
         return 0;
     }
-}
+}*/
 
 
 
@@ -90,7 +91,7 @@ int make_move(player_t *first, othello_board_t *board) {
     col = atoi(y);
     col --;
 
-    if(is_valid_position(row, col) != 0) {
+    /*if(is_valid_position(row, col) != 0) {
         if(apply_move(first, board, row, col, first -> token) == 1){
 		valid = 1;
 	}
@@ -100,7 +101,7 @@ int make_move(player_t *first, othello_board_t *board) {
     }
     else{
 	    printf("Coordinates are not valid. Please try again: \n");
-    }
+    }*/
     return 1;
 }
 

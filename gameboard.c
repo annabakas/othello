@@ -4,75 +4,62 @@
 #include <string.h>
 #include <stdlib.h>
 
-othello_board_t *board[8][8];
-othello_board_t *copy[8][8];
+
 //Initializes gameboard with four center pieces
-void othello_new() {
-    for(int x = 0; x < ROWS; x++) {
-        for(int g = 0; g < COLS; g++) {
-            board[x][g] = malloc(sizeof(char*));
+void othello_new(othello_board_t *board) {
+    for(int x = 0; x < SIZE; x++) {
+        for(int g = 0; g < SIZE; g++) {
             if((x == 3 && g == 3) || (x == 4 && g == 4)) {
-                board[x][g] -> color = 'W'; //Player A
+                board -> board[x][g]  = PLAYER_A; //Player A
             }
             else if((x == 3 && g == 4) || (x == 4 && g == 3)) {
-                board[x][g] -> color = 'B'; //Player B
+                board -> board[x][g] = PLAYER_B; //Player B
             }
             else {
-                board[x][g] -> color = ' ';
+                board -> board[x][g] = EMPTY;
             }
         }
     }
 }
 
 //Displays the board in current state with row numbers and column numbers
-void displayBoard() {
+void displayBoard(othello_board_t *board) {
     char col_label = '1';
     int col, row;
 
-    for(col = 0; col < COLS; col++) {
+    for(col = 0; col < SIZE; col++) {
         printf("   %c", col_label+col); //Display top line
     }
     printf("\n");
 
     //Display middle rows
-    for(row = 0; row < ROWS; row++) {
+    for(row = 0; row < SIZE; row++) {
         printf("  +");
-        for(col = 0; col<COLS; col++) {
+        for(col = 0; col<SIZE; col++) {
             printf("---+");
         }
         printf("\n%2d|",row + 1);
 
-        for(col = 0; col<COLS; col++) {
-            printf(" %c |", board[row][col]->color); //Display row counters
+        for(col = 0; col<SIZE; col++) {
+            printf(" %c |", board -> board[row][col]); //Display row counters
         }
         printf("\n");
     }
 
     printf("  +");
-    for(col= 0 ; col<COLS ; col++) {
+    for(col= 0 ; col<SIZE ; col++) {
         printf("---+"); // Display bottom line
     }
     printf("\n");
 }
 
-//Copies othello board into another board
-void copyBoard() {
-    //othello_board_t *copy[8][8];
-    for(int row = 0; row < ROWS; row++) {
-        for(int col = 0; col < ROWS; col++) {
-            copy[row][col] = board[row][col];
-        }
-    }
-
-}
-
 //Check if board is full
 //Return 0 if not and 1 if it is
-int board_full() {
+int board_full(othello_board_t *board) {
     int x, y;
-    for(x = 0; x < ROWS; x++) {
-        for(y = 0; y < COLS; y++) {
-            if(board[x][y] -> color  == ' ') {
+    for(x = 0; x < SIZE; x++) {
+        for(y = 0; y < SIZE; y++) {
+            if(board -> board[x][y]  == ' ') {
                 return 0;
             }
         }
@@ -87,7 +74,7 @@ int is_valid_position(int row, int col) {
     }
     return 1;
 }
-
+/*
 //Comparing if two boards are identical
 //Return 0 if they aren't and 1 if they are
 //Prints the row and column where there are differences
@@ -106,4 +93,4 @@ int compareBoards() {
     }
 
     return 1;
-}
+}*/

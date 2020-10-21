@@ -7,19 +7,21 @@
 
 //Testing that board is not full at start
 TEST(GameboardTests, isFull) {
-    othello_new();
-    ASSERT_EQ(board_full(), 0);
+	othello_board_t board;
+    othello_new(&board);
+    ASSERT_EQ(board_full(&board), 0);
 }
 
 //Testing that board was initialized with four center pieces
 TEST(GameboardTests, InitializedCenter) {
-    othello_new();
-    char pieceA[3] = "W";
+	othello_board_t board;
+    othello_new(&board);
+    char pieceA[3] = "A";
     char pieceB[3] = "B";
-    char player_A_init[3] = {board[3][3] -> color};
-    char player_A_init2[3] = {board[4][4] -> color};
-    char player_B_init[3] = {board[3][4] -> color};
-    char player_B_init2[3] = {board[4][3] -> color};
+    char player_A_init[3] = {board.board[3][3]};
+    char player_A_init2[3] = {board. board[4][4]};
+    char player_B_init[3] = {board.board[3][4]};
+    char player_B_init2[3] = {board.board[4][3]};
     ASSERT_STREQ(pieceA,player_A_init);
     ASSERT_STREQ(pieceA,player_A_init2);
     ASSERT_STREQ(pieceB,player_B_init);
@@ -30,14 +32,16 @@ TEST(GameboardTests, InitializedCenter) {
 TEST(GameboardTests, InitializedBlanks) {
     char blank[3] = " ";
     int row, col;
+    othello_board_t board;
+    othello_new(&board);
     for(row = 0; row < 8; row++) {
         for(col = 0; col < 8; col++) {
             if((row != 3 && col != 3) && (row != 4 && col != 4)) {
-                char piece[3] = {board[row][col] -> color};
+                char piece[3] = {board.board[row][col]};
                 ASSERT_STREQ(blank, piece);
             }
             else if((row != 3 && col !=4) && (row != 4 && col != 3)) {
-                char piece2[3] = {board[row][col] -> color};
+                char piece2[3] = {board.board[row][col]};
                 ASSERT_STREQ(blank, piece2);
             }
         }

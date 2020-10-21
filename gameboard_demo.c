@@ -6,11 +6,11 @@
 
 int quit = 0;
 
-int moves[ROWS][COLS] = {0};
+int moves[SIZE][SIZE] = {0};
 player_t first, second, other, current;
-
+othello_board_t board;
 int main(void) {
-    othello_new();
+    othello_new(&board);
 
     init_first_player(&first);
     init_second_player(&second);
@@ -18,7 +18,7 @@ int main(void) {
     current = first;
     other = second;
     while(quit == 0) {
-        displayBoard();
+        displayBoard(&board);
         printf("It's %s's turn\n", current.name);
         make_move(&current, &board);
         swap_players(&current, &other);
