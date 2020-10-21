@@ -4,23 +4,21 @@
 #include "gameboard.h"
 #include "player.h"
 
-int quit = 0;
 
-int moves[SIZE][SIZE] = {0};
-player_t first, second, other, current;
 othello_board_t board;
 int main(void) {
-    othello_new(&board);
+    int start = 1;
+    int number_moves = 0;
+    int invalid_moves = 0;
+    int moves[SIZE][SIZE] = {0};
+    do {
+        //Player A goes first
+        if(start++ % 2 == 0) {
+            printf("It's Player A's Turn\n");
+            if(valid_moves(&board,moves,PLAYER_A)){
+	    }
+        }
 
-    init_first_player(&first);
-    init_second_player(&second);
+    }while(number_moves < SIZE*SIZE && invalid_moves < 0);
 
-    current = first;
-    other = second;
-    while(quit == 0) {
-        displayBoard(&board);
-        printf("It's %s's turn\n", current.name);
-        make_move(&current, &board);
-        swap_players(&current, &other);
-    }
 }

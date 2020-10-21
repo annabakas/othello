@@ -2,13 +2,8 @@
 #define _PLAYER_H_
 #include "gameboard.h"
 #define NAMELEN 20
-typedef struct _player_t {
-	char name[NAMELEN+1];
-	char token;
-}player_t;
 
 
-extern void init_first_player(player_t *first);
-extern void init_second_player(player_t *second);
-
+extern int moves[SIZE][SIZE] ={0};
+extern int valid_move(othello_board_t *board,int moves[][SIZE], char player);
 #endif
