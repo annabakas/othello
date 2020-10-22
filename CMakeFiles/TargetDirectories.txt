@@ -1,4 +1,4 @@
 /home/annabakas/othello-project-annabakas/CMakeFiles/rebuild_cache.dir
 /home/annabakas/othello-project-annabakas/CMakeFiles/edit_cache.dir
 /home/annabakas/othello-project-annabakas/CMakeFiles/othello_tests.dir
-/home/annabakas/othello-project-annabakas/CMakeFiles/gameboard_demo.dir
+/home/annabakas/othello-project-annabakas/CMakeFiles/othello.dir

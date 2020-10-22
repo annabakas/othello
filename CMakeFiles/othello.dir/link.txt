@@ -1,0 +1,1 @@
+/usr/bin/cc   -rdynamic CMakeFiles/othello.dir/othello.c.o CMakeFiles/othello.dir/gameboard.c.o CMakeFiles/othello.dir/player.c.o  -o bin/othello  /usr/local/lib/libgtest.a -lpthread -lm 
