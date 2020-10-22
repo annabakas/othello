@@ -26,7 +26,7 @@ int main(void) {
             row--;
             col--;
 
-            if(row >= 0 && row < SIZE && col >= 0 && col < SIZE) {
+            if(is_valid_position(row,col) == 1) {
                 number_moves++;
                 //break;
             }
