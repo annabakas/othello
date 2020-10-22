@@ -1,9 +1,0 @@
-#ifndef _PLAYER_H_
-#define _PLAYER_H_
-#include "gameboard.h"
-#define NAMELEN 20
-
-
-extern int moves[SIZE][SIZE] ={0};
-extern int valid_move(othello_board_t *board,int moves[][SIZE], char player);
-#endif
