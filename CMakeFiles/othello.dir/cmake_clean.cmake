@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/othello.dir/gameboard.c.o"
+  "CMakeFiles/othello.dir/logic.c.o"
   "CMakeFiles/othello.dir/othello.c.o"
   "CMakeFiles/othello.dir/player.c.o"
   "bin/othello"

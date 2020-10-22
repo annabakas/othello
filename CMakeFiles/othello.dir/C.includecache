@@ -6,9 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/annabakas/othello-project-annabakas/gameboard.c
+/home/annabakas/othello-project-annabakas/gameboard.h
+stdio.h
+-
+
+/home/annabakas/othello-project-annabakas/logic.c
+logic.h
+/home/annabakas/othello-project-annabakas/logic.h
+player.h
+/home/annabakas/othello-project-annabakas/player.h
 gameboard.h
 /home/annabakas/othello-project-annabakas/gameboard.h
+stdio.h
+-
 stdio.h
 -
 string.h
@@ -16,8 +26,18 @@ string.h
 stdlib.h
 -
 
+/home/annabakas/othello-project-annabakas/logic.h
+player.h
+/home/annabakas/othello-project-annabakas/player.h
+gameboard.h
 /home/annabakas/othello-project-annabakas/gameboard.h
 stdio.h
+-
+stdio.h
+-
+string.h
+-
+stdlib.h
 -
 
 /home/annabakas/othello-project-annabakas/othello.c
@@ -29,20 +49,8 @@ gameboard.h
 /home/annabakas/othello-project-annabakas/gameboard.h
 player.h
 /home/annabakas/othello-project-annabakas/player.h
-
-/home/annabakas/othello-project-annabakas/player.c
-player.h
-/home/annabakas/othello-project-annabakas/player.h
-gameboard.h
-/home/annabakas/othello-project-annabakas/gameboard.h
-stdio.h
--
-stdio.h
--
-string.h
--
-stdlib.h
--
+logic.c
+/home/annabakas/othello-project-annabakas/logic.c
 
 /home/annabakas/othello-project-annabakas/player.h
 gameboard.h

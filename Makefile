@@ -166,6 +166,33 @@ gameboard.c.s:
 	$(MAKE) -f CMakeFiles/othello.dir/build.make CMakeFiles/othello.dir/gameboard.c.s
 .PHONY : gameboard.c.s
 
+logic.o: logic.c.o
+
+.PHONY : logic.o
+
+# target to build an object file
+logic.c.o:
+	$(MAKE) -f CMakeFiles/othello.dir/build.make CMakeFiles/othello.dir/logic.c.o
+.PHONY : logic.c.o
+
+logic.i: logic.c.i
+
+.PHONY : logic.i
+
+# target to preprocess a source file
+logic.c.i:
+	$(MAKE) -f CMakeFiles/othello.dir/build.make CMakeFiles/othello.dir/logic.c.i
+.PHONY : logic.c.i
+
+logic.s: logic.c.s
+
+.PHONY : logic.s
+
+# target to generate assembly for a file
+logic.c.s:
+	$(MAKE) -f CMakeFiles/othello.dir/build.make CMakeFiles/othello.dir/logic.c.s
+.PHONY : logic.c.s
+
 othello.o: othello.c.o
 
 .PHONY : othello.o
@@ -260,6 +287,9 @@ help:
 	@echo "... gameboard.o"
 	@echo "... gameboard.i"
 	@echo "... gameboard.s"
+	@echo "... logic.o"
+	@echo "... logic.i"
+	@echo "... logic.s"
 	@echo "... othello.o"
 	@echo "... othello.i"
 	@echo "... othello.s"

@@ -3,6 +3,7 @@
 
 #include "gameboard.h"
 #include "player.h"
+#include "logic.c"
 
 
 othello_board_t board;
@@ -26,7 +27,7 @@ int main(void) {
             row--;
             col--;
 
-            if(is_valid_position(row,col) == 1) {
+            if(is_valid_position(row,col) == 1 && moves[row][col]) {
                 number_moves++;
                 //break;
             }
