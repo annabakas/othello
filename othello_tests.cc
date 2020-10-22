@@ -3,6 +3,8 @@
 #include <gtest/gtest.h>
 
 #include "gameboard.hh"
+#include "player.hh"
+#include "logic.hh"
 #include <stdio.h>
 
 //Testing that board is not full at start
@@ -52,6 +54,15 @@ TEST(GameboardTests, InitializedBlanks) {
 TEST(GameboardTests, ValidPosition) {
     ASSERT_EQ(0, is_valid_position(10,2));
     ASSERT_EQ(1, is_valid_position(0,1));
+}
+
+TEST(PlayerTests, PromptMove){
+	int row = 0;
+	int col = 0;
+	printf("Use 4 4 for this test\n");
+	prompt_move(&row, &col);
+	ASSERT_EQ(4, row);
+	ASSERT_EQ(4, col);
 }
 
 int main(int argc, char **argv) {
