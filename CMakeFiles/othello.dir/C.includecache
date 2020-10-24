@@ -10,6 +10,8 @@
 stdio.h
 -
 
+/home/annabakas/othello-project-annabakas/logic.c
+logic.h
 /home/annabakas/othello-project-annabakas/logic.h
 player.h
 /home/annabakas/othello-project-annabakas/player.h
@@ -24,17 +26,19 @@ string.h
 stdlib.h
 -
 
-/home/annabakas/othello-project-annabakas/othello.c
+/home/annabakas/othello-project-annabakas/logic.h
+player.h
+/home/annabakas/othello-project-annabakas/player.h
+gameboard.h
+/home/annabakas/othello-project-annabakas/gameboard.h
 stdio.h
+-
+stdio.h
+-
+string.h
 -
 stdlib.h
 -
-gameboard.h
-/home/annabakas/othello-project-annabakas/gameboard.h
-player.h
-/home/annabakas/othello-project-annabakas/player.h
-logic.h
-/home/annabakas/othello-project-annabakas/logic.h
 
 /home/annabakas/othello-project-annabakas/player.h
 gameboard.h

@@ -65,6 +65,12 @@ TEST(PlayerTests, PromptMove) {
     ASSERT_EQ(4, col);
 }
 
+TEST(LogicTests, Switch){
+	char playerA = 'A';
+	char playerB = 'B';
+	ASSERT_EQ(playerB, switch_players(playerA, playerB));
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
