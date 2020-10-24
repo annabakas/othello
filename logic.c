@@ -55,3 +55,11 @@ void make_move(othello_board_t *board, int r, int c, char player) {
         }
     }
 }
+
+char switch_players(char player, char other){
+	char temp = player;
+	player = other;
+	other = temp;
+	return player;
+}
+
