@@ -20,11 +20,12 @@ int main(void) {
     //Initial four pieces on the board
     number_moves = 4;
     do {
-	start+=1;
+        start+=1;
         //Player A goes first
         if(start % 2 == 0) {
             printf("It's Player A's Turn\n");
             displayBoard(&board);
+	    printf("Possible Moves: \n");
             if(valid_moves(&board,moves,PLAYER_A)) {
                 for(;;) {
                     prompt_move(&row, &col);
@@ -34,7 +35,7 @@ int main(void) {
                     if(is_valid_position(row,col) == 1 && moves[row][col]) {
                         make_move(&board, row, col, PLAYER_A);
                         number_moves++;
-			//printf("%d\n", number_moves);
+                        //printf("%d\n", number_moves);
                         displayBoard(&board);
                         break;
                     }

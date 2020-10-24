@@ -13,15 +13,26 @@ void prompt_move(int *r, int *c) {
     fflush(stdin);
 }
 
-void print_possible_moves(int r, int c){
-	int x = r;
-	int y = c;
-	x++;
-	y++;
-	printf("%d, %d\n", x, y);
+//Print out possible moves for player to make at their turn
+void print_possible_moves(int r, int c) {
+    int x = r;
+    int y = c;
+    x++;
+    y++;
+    printf("%d %d\n", x, y);
+}
+
+//Initializes moves array to zero
+void init_moves(int moves[][SIZE]) {
+    int row, col;
+    for(row = 0; row < SIZE; row++) {
+        for(col = 0; col < SIZE; col++) {
+            moves[row][col] = 0;
+        }
+    }
+
 }
 //Finding which squares are valid moves for each player
-//Valid moves are stored in moves[][]
 //Returns number of moves that are valid
 int valid_moves(othello_board_t *board, int moves[][SIZE], char player) {
     int row_count = 0;
@@ -35,12 +46,7 @@ int valid_moves(othello_board_t *board, int moves[][SIZE], char player) {
     //Set which player is the opponent
     char other = (player == PLAYER_A) ? PLAYER_B : PLAYER_A;
 
-    //Initialize moves array to zero
-    for(r = 0; r < SIZE; r++) {
-        for(c = 0; c < SIZE; c++) {
-            moves[r][c] = 0;
-        }
-    }
+    init_moves(moves);
 
     //Valid move = a blank square and encloses at least one opponent square
     //between two player squares
@@ -58,6 +64,7 @@ int valid_moves(othello_board_t *board, int moves[][SIZE], char player) {
                     }
                     //Check square
                     if(board -> board[r+row_count][c+col_count] == other) {
+                        //check_square(x, y, r, c, row_count, col_count, board, moves, player, number_moves);
                         x = r + row_count;
                         y = c + col_count;
 
@@ -77,7 +84,7 @@ int valid_moves(othello_board_t *board, int moves[][SIZE], char player) {
                             //If square has a player piece -> valid move
                             if(board -> board[x][y] == player) {
                                 moves[r][c] = 1;
-				print_possible_moves(r,c);
+                                print_possible_moves(r,c);
                                 number_moves++;
                                 break;
                             }
@@ -87,6 +94,5 @@ int valid_moves(othello_board_t *board, int moves[][SIZE], char player) {
             }
         }
     }
-
     return number_moves;
 }
