@@ -9,14 +9,14 @@
 
 //Testing that board is not full at start
 TEST(GameboardTests, isFull) {
-    othello_board_t board;
+	othello_board_t board;
     othello_new(&board);
     ASSERT_EQ(board_full(&board), 0);
 }
 
 //Testing that board was initialized with four center pieces
 TEST(GameboardTests, InitializedCenter) {
-    othello_board_t board;
+	othello_board_t board;
     othello_new(&board);
     char pieceA[3] = "A";
     char pieceB[3] = "B";
@@ -56,13 +56,13 @@ TEST(GameboardTests, ValidPosition) {
     ASSERT_EQ(1, is_valid_position(0,1));
 }
 
-TEST(PlayerTests, PromptMove) {
-    int row = 0;
-    int col = 0;
-    printf("Use 4 4 for this test\n");
-    prompt_move(&row, &col);
-    ASSERT_EQ(4, row);
-    ASSERT_EQ(4, col);
+TEST(PlayerTests, PromptMove){
+	int row = 0;
+	int col = 0;
+	printf("Use 4 4 for this test\n");
+	prompt_move(&row, &col);
+	ASSERT_EQ(4, row);
+	ASSERT_EQ(4, col);
 }
 
 int main(int argc, char **argv) {

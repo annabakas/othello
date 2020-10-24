@@ -25,6 +25,7 @@ int main(void) {
         if(start % 2 == 0) {
             printf("It's Player A's Turn\n");
             displayBoard(&board);
+	    printf("Possible Moves: \n");
             if(valid_moves(&board,moves,PLAYER_A)) {
                 for(;;) {
                     prompt_move(&row, &col);

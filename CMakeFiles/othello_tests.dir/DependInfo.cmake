@@ -6,6 +6,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "/home/annabakas/othello-project-annabakas/gameboard.c" "/home/annabakas/othello-project-annabakas/CMakeFiles/othello_tests.dir/gameboard.c.o"
+  "/home/annabakas/othello-project-annabakas/logic.c" "/home/annabakas/othello-project-annabakas/CMakeFiles/othello_tests.dir/logic.c.o"
+  "/home/annabakas/othello-project-annabakas/player.c" "/home/annabakas/othello-project-annabakas/CMakeFiles/othello_tests.dir/player.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 

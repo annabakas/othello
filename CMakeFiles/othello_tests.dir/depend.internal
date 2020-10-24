@@ -4,7 +4,20 @@
 CMakeFiles/othello_tests.dir/gameboard.c.o
  /home/annabakas/othello-project-annabakas/gameboard.c
  /home/annabakas/othello-project-annabakas/gameboard.h
+CMakeFiles/othello_tests.dir/logic.c.o
+ /home/annabakas/othello-project-annabakas/gameboard.h
+ /home/annabakas/othello-project-annabakas/logic.c
+ /home/annabakas/othello-project-annabakas/logic.h
+ /home/annabakas/othello-project-annabakas/player.h
+CMakeFiles/othello_tests.dir/player.c.o
+ /home/annabakas/othello-project-annabakas/gameboard.h
+ /home/annabakas/othello-project-annabakas/player.c
+ /home/annabakas/othello-project-annabakas/player.h
 CMakeFiles/othello_tests.dir/othello_tests.cc.o
  /home/annabakas/othello-project-annabakas/gameboard.h
  /home/annabakas/othello-project-annabakas/gameboard.hh
+ /home/annabakas/othello-project-annabakas/logic.h
+ /home/annabakas/othello-project-annabakas/logic.hh
  /home/annabakas/othello-project-annabakas/othello_tests.cc
+ /home/annabakas/othello-project-annabakas/player.h
+ /home/annabakas/othello-project-annabakas/player.hh

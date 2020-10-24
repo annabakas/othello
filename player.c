@@ -8,9 +8,17 @@
 
 //Prompts player to enter coordinates for location they wish to place their piece
 void prompt_move(int *r, int *c) {
-    printf("Enter row [1-8] and column [1-8] separated by a single space (ex: 2 4): ");
+    printf("\nEnter row [1-8] and column [1-8] separated by a single space (ex: 2 4): ");
     scanf("%d %d", r, c);
     fflush(stdin);
+}
+
+void print_possible_moves(int r, int c){
+	int x = r;
+	int y = c;
+	x++;
+	y++;
+	printf("%d, %d\n", x, y);
 }
 //Finding which squares are valid moves for each player
 //Valid moves are stored in moves[][]
@@ -25,7 +33,7 @@ int valid_moves(othello_board_t *board, int moves[][SIZE], char player) {
     int number_moves = 0;
 
     //Set which player is the opponent
-    char playerB = (player == PLAYER_A) ? PLAYER_B : PLAYER_A;
+    char other = (player == PLAYER_A) ? PLAYER_B : PLAYER_A;
 
     //Initialize moves array to zero
     for(r = 0; r < SIZE; r++) {
@@ -49,7 +57,7 @@ int valid_moves(othello_board_t *board, int moves[][SIZE], char player) {
                         continue;
                     }
                     //Check square
-                    if(board -> board[r+row_count][c+col_count] == playerB) {
+                    if(board -> board[r+row_count][c+col_count] == other) {
                         x = r + row_count;
                         y = c + col_count;
 
@@ -69,6 +77,7 @@ int valid_moves(othello_board_t *board, int moves[][SIZE], char player) {
                             //If square has a player piece -> valid move
                             if(board -> board[x][y] == player) {
                                 moves[r][c] = 1;
+				print_possible_moves(r,c);
                                 number_moves++;
                                 break;
                             }
@@ -78,4 +87,6 @@ int valid_moves(othello_board_t *board, int moves[][SIZE], char player) {
             }
         }
     }
+
+    return number_moves;
 }

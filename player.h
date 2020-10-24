@@ -4,4 +4,5 @@
 
 extern int valid_moves(othello_board_t *board,int moves[][SIZE], char player);
 extern void prompt_move(int *row, int *col);
+extern void print_possible_moves(int r, int c);
 #endif

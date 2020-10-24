@@ -172,6 +172,7 @@ logic.o: logic.c.o
 
 # target to build an object file
 logic.c.o:
+	$(MAKE) -f CMakeFiles/othello_tests.dir/build.make CMakeFiles/othello_tests.dir/logic.c.o
 	$(MAKE) -f CMakeFiles/othello.dir/build.make CMakeFiles/othello.dir/logic.c.o
 .PHONY : logic.c.o
 
@@ -181,6 +182,7 @@ logic.i: logic.c.i
 
 # target to preprocess a source file
 logic.c.i:
+	$(MAKE) -f CMakeFiles/othello_tests.dir/build.make CMakeFiles/othello_tests.dir/logic.c.i
 	$(MAKE) -f CMakeFiles/othello.dir/build.make CMakeFiles/othello.dir/logic.c.i
 .PHONY : logic.c.i
 
@@ -190,6 +192,7 @@ logic.s: logic.c.s
 
 # target to generate assembly for a file
 logic.c.s:
+	$(MAKE) -f CMakeFiles/othello_tests.dir/build.make CMakeFiles/othello_tests.dir/logic.c.s
 	$(MAKE) -f CMakeFiles/othello.dir/build.make CMakeFiles/othello.dir/logic.c.s
 .PHONY : logic.c.s
 
@@ -253,6 +256,7 @@ player.o: player.c.o
 
 # target to build an object file
 player.c.o:
+	$(MAKE) -f CMakeFiles/othello_tests.dir/build.make CMakeFiles/othello_tests.dir/player.c.o
 	$(MAKE) -f CMakeFiles/othello.dir/build.make CMakeFiles/othello.dir/player.c.o
 .PHONY : player.c.o
 
@@ -262,6 +266,7 @@ player.i: player.c.i
 
 # target to preprocess a source file
 player.c.i:
+	$(MAKE) -f CMakeFiles/othello_tests.dir/build.make CMakeFiles/othello_tests.dir/player.c.i
 	$(MAKE) -f CMakeFiles/othello.dir/build.make CMakeFiles/othello.dir/player.c.i
 .PHONY : player.c.i
 
@@ -271,6 +276,7 @@ player.s: player.c.s
 
 # target to generate assembly for a file
 player.c.s:
+	$(MAKE) -f CMakeFiles/othello_tests.dir/build.make CMakeFiles/othello_tests.dir/player.c.s
 	$(MAKE) -f CMakeFiles/othello.dir/build.make CMakeFiles/othello.dir/player.c.s
 .PHONY : player.c.s
 
