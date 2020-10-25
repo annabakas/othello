@@ -95,6 +95,8 @@ int compareBoards() {
     return 1;
 }*/
 
+//Returns score of current player
+//i.e. the number of pieces they have on the board currently
 int getScore(othello_board_t *board, char player) {
     int score = 0;
     for(int row = 0; row < SIZE; row++) {
@@ -108,6 +110,7 @@ int getScore(othello_board_t *board, char player) {
     return score;
 }
 
+//Mark playable squares on the board with *
 void playable_squares(othello_board_t *board, int r, int c) {
     for(int row = 0; row < SIZE; row++) {
         for(int col = 0; col < SIZE; col++) {
@@ -116,6 +119,9 @@ void playable_squares(othello_board_t *board, int r, int c) {
     }
 }
 
+//Clear playable squares from the board
+//after player makes their move
+//Mark the squares empty
 void clear_playable(othello_board_t *board) {
     for(int row = 0; row < SIZE; row++) {
         for(int col = 0; col < SIZE; col++) {
