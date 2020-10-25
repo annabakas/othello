@@ -67,10 +67,10 @@ TEST(PlayerTests, PromptMove) {
 }
 
 //Testing that correct winner is returned
-TEST(LogicTests, Winner) {
-    int play1 = 10;
-    int play2 = 20;
-    ASSERT_EQ(PLAYER_B, get_winner(play1, play2));
+TEST(LogicTests, Winner){
+	int play1 = 10;
+	int play2 = 20;
+	ASSERT_EQ(PLAYER_B, get_winner(play1, play2));
 }
 
 int main(int argc, char **argv) {

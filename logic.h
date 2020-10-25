@@ -7,4 +7,4 @@
 #include <stdlib.h>
 
 extern void make_move(othello_board_t *board, int r, int c, char player);
-extern char switch_players(char player, char other);
+extern char get_winner(int playerA_Score, int playerB_Score);

@@ -97,7 +97,7 @@ int valid_moves(othello_board_t *board, int moves[][SIZE], char player) {
                             if(board -> board[x][y] == player) {
                                 moves[r][c] = 1;
                                 //print_possible_moves(r,c);
-                                playable_squares(board, r, c);
+				playable_squares(board, r, c);
                                 number_moves++;
                                 break;
                             }

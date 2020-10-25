@@ -22,11 +22,11 @@ void make_move(othello_board_t *board, int r, int c, char player) {
     for(row_count = -1; row_count <= 1; row_count++) {
         for(col_count = -1; col_count <= 1; col_count++) {
             //Ignore outside the array or the current square
-            if(avoid(r,c,row_count,col_count) == 1) {
-                continue;
+            if(avoid(r,c,row_count,col_count) == 1){
+    		    continue;
             }
 
-            //If we find the opponent's piece, then search for player's piece
+	    //If we find the opponent's piece, then search for player's piece
             if(board -> board[r + row_count][c + col_count] == other) {
                 x = r + row_count; //Moving to where opponent's piece is
                 y = c + col_count;
@@ -58,12 +58,12 @@ void make_move(othello_board_t *board, int r, int c, char player) {
 }
 
 //Returning player who has the highest score i.e. the winner
-char get_winner(int playerA_Score, int playerB_Score) {
-    if(playerA_Score > playerB_Score) {
-        return PLAYER_A;
-    }
-    else {
-        return PLAYER_B;
-    }
+char get_winner(int playerA_Score, int playerB_Score){
+	if(playerA_Score > playerB_Score){
+		return PLAYER_A;
+	}
+	else{
+		return PLAYER_B;
+	}
 }
 
