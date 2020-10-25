@@ -56,6 +56,7 @@ TEST(GameboardTests, ValidPosition) {
     ASSERT_EQ(1, is_valid_position(0,1));
 }
 
+//Testing that prompted move is stored correctly
 TEST(PlayerTests, PromptMove) {
     int row = 0;
     int col = 0;
@@ -65,10 +66,11 @@ TEST(PlayerTests, PromptMove) {
     ASSERT_EQ(4, col);
 }
 
-TEST(LogicTests, Switch) {
-    char playerA = 'A';
-    char playerB = 'B';
-    ASSERT_EQ(playerB, switch_players(playerA, playerB));
+//Testing that correct winner is returned
+TEST(LogicTests, Winner){
+	int play1 = 10;
+	int play2 = 20;
+	ASSERT_EQ(PLAYER_B, get_winner(play1, play2));
 }
 
 int main(int argc, char **argv) {
