@@ -16,7 +16,7 @@ void make_move(othello_board_t *board, int r, int c, char player) {
     char other = (player == PLAYER_A) ? PLAYER_B : PLAYER_A;
 
     //Place player's piece on the board
-    board -> board[r][c] = PLAYER_A;
+    board -> board[r][c] = player;
 
     //Checking squares around blank square for opponent's piece
     for(row_count = -1; row_count <= 1; row_count++) {

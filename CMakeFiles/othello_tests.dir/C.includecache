@@ -40,20 +40,6 @@ string.h
 stdlib.h
 -
 
-/home/annabakas/othello-project-annabakas/player.c
-player.h
-/home/annabakas/othello-project-annabakas/player.h
-gameboard.h
-/home/annabakas/othello-project-annabakas/gameboard.h
-stdio.h
--
-stdio.h
--
-string.h
--
-stdlib.h
--
-
 /home/annabakas/othello-project-annabakas/player.h
 gameboard.h
 /home/annabakas/othello-project-annabakas/gameboard.h
