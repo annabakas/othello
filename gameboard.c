@@ -94,3 +94,18 @@ int compareBoards() {
 
     return 1;
 }*/
+
+int getScore(othello_board_t *board, char player) {
+    int score = 0;
+    for(int row = 0; row < SIZE; row++) {
+        for(int col = 0; col < SIZE; col++) {
+            if(board -> board[row][col] == player) {
+                score++;
+            }
+        }
+    }
+
+    return score;
+}
+
+
