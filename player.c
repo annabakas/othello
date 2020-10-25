@@ -62,6 +62,7 @@ int valid_moves(othello_board_t *board, int moves[][SIZE], char player) {
     //between two player squares
     for(r = 0; r < SIZE; r++) {
         for(c = 0; c < SIZE; c++) {
+            //If square is not empty, keep going
             if(board -> board[r][c] != EMPTY) {
                 continue;
             }
@@ -72,12 +73,14 @@ int valid_moves(othello_board_t *board, int moves[][SIZE], char player) {
                     if(avoid(r,c,row_count,col_count) == 1) {
                         continue;
                     }
-                    //Check square
+                    //Checking the square
+                    //If other's piece is found then
+                    //search for player's piece
                     if(board -> board[r+row_count][c+col_count] == other) {
                         x = r + row_count;
                         y = c + col_count;
 
-                        //Look for player piece
+                        //Looking for player piece
                         for(;;) {
                             x += row_count;
                             y += col_count;
@@ -87,13 +90,16 @@ int valid_moves(othello_board_t *board, int moves[][SIZE], char player) {
                                 break;
                             }
 
-                            //Encounter blank  square? Give up
+                            //Encounter blank square? Give up
                             if(board -> board[x][y] == EMPTY) {
                                 break;
                             }
 
 
                             //If square has a player piece -> valid move
+                            //Mark valid move as one in moves array
+                            //Increment number of moves count
+                            //Break to keep checking other squares
                             if(board -> board[x][y] == player) {
                                 moves[r][c] = 1;
                                 //print_possible_moves(r,c);
