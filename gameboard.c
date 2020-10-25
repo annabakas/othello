@@ -108,4 +108,20 @@ int getScore(othello_board_t *board, char player) {
     return score;
 }
 
+void playable_squares(othello_board_t *board, int r, int c) {
+    for(int row = 0; row < SIZE; row++) {
+        for(int col = 0; col < SIZE; col++) {
+            board -> board[r][c] = PLAYABLE;
+        }
+    }
+}
 
+void clear_playable(othello_board_t *board) {
+    for(int row = 0; row < SIZE; row++) {
+        for(int col = 0; col < SIZE; col++) {
+            if(board -> board[row][col] == PLAYABLE) {
+                board -> board[row][col] = EMPTY;
+            }
+        }
+    }
+}
