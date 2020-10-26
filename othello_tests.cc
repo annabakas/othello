@@ -73,6 +73,38 @@ TEST(LogicTests, Winner) {
     ASSERT_EQ(PLAYER_B, get_winner(play1, play2));
 }
 
+//Testing that off_board identifies if coordinates are off the board
+TEST(LogicTests, OffBoard) {
+    int row = 10;
+    int col = 13;
+    ASSERT_EQ(1, off_board(row, col));
+}
+
+//Testing that off_board identifies if coordinates are on the board
+TEST(LogicTests, OnBoard) {
+    int row = 3;
+    int col = 4;
+    ASSERT_EQ(0, off_board(row, col));
+}
+
+//Testing that found_blank identifies if square is blank
+TEST(LogicTests, FoundBlank) {
+    int row = 6;
+    int col = 6;
+    othello_board_t board;
+    othello_new(&board);
+    ASSERT_EQ(1, found_blank(&board,row,col));
+}
+
+//Testing that found_blank identifies if square is not blank
+TEST(LogicTests, NotBlank) {
+    int row = 4;
+    int col = 4;
+    othello_board_t board;
+    othello_new(&board);
+    ASSERT_EQ(0, found_blank(&board, row, col));
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
