@@ -7,22 +7,22 @@
 #include <string.h>
 #include <stdlib.h>
 
-int off_board(int x, int y) {
-    if(x < 0 || x >= SIZE || y < 0 || y >= SIZE) {
-        return 1;
-    }
-    else {
-        return 0;
-    }
+int off_board(int x, int y){
+	if(x < 0 || x >= SIZE || y < 0 || y >= SIZE){
+		return 1;
+	}
+	else{
+		return 0;
+	}
 }
 
-int found_blank(othello_board_t *board, int x, int y) {
-    if(board -> board[x][y] == EMPTY) {
-        return 1;
-    }
-    else {
-        return 0;
-    }
+int found_blank(othello_board_t *board, int x, int y){
+	if(board -> board[x][y] == EMPTY){
+		return 1;
+	}
+	else{
+		return 0;
+	}
 }
 
 void make_move(othello_board_t *board, int r, int c, char player) {
@@ -32,7 +32,7 @@ void make_move(othello_board_t *board, int r, int c, char player) {
     int y = 0;
 
     //Identifying opponent
-    char other = set_opponent(player);
+    char other = (player == PLAYER_A) ? PLAYER_B : PLAYER_A;
 
     //Place player's piece on the board
     board -> board[r][c] = player;

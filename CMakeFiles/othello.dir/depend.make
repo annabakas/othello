@@ -15,6 +15,7 @@ CMakeFiles/othello.dir/othello.c.o: othello.c
 CMakeFiles/othello.dir/othello.c.o: player.h
 
 CMakeFiles/othello.dir/player.c.o: gameboard.h
+CMakeFiles/othello.dir/player.c.o: logic.h
 CMakeFiles/othello.dir/player.c.o: player.c
 CMakeFiles/othello.dir/player.c.o: player.h
 

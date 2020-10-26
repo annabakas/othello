@@ -58,11 +58,11 @@ TEST(GameboardTests, ValidPosition) {
 
 //Testing that getScore returns correct score
 //In this case: for initial set up
-TEST(GameboardTests, InitialScore) {
-    othello_board_t board;
-    othello_new(&board);
-    ASSERT_EQ(2, getScore(&board, PLAYER_A));
-    ASSERT_EQ(2, getScore(&board, PLAYER_B));
+TEST(GameboardTests, InitialScore){
+	othello_board_t board;
+	othello_new(&board);
+	ASSERT_EQ(2, getScore(&board, PLAYER_A));
+	ASSERT_EQ(2, getScore(&board, PLAYER_B));
 }
 
 //Testing that prompted move is stored correctly
@@ -76,9 +76,9 @@ TEST(PlayerTests, PromptMove) {
 }
 
 //Testing that opponent of current player is set correctly
-TEST(PlayerTests, SetOpponent) {
-    ASSERT_EQ(PLAYER_B, set_opponent(PLAYER_A));
-    ASSERT_EQ(PLAYER_A, set_opponent(PLAYER_B));
+TEST(PlayerTests, SetOpponent){
+	ASSERT_EQ(PLAYER_B, set_opponent(PLAYER_A));
+	ASSERT_EQ(PLAYER_A, set_opponent(PLAYER_B));
 }
 
 //Testing that correct winner is returned

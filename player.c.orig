@@ -44,13 +44,13 @@ int avoid(int r, int c, int row_count, int col_count) {
 }
 
 //Returning opponent of current player
-char set_opponent(char player) {
-    if(player == PLAYER_A) {
-        return PLAYER_B;
-    }
-    else {
-        return PLAYER_A;
-    }
+char set_opponent(char player){
+	if(player == PLAYER_A){
+		return PLAYER_B;
+	}
+	else{
+		return PLAYER_A;
+	}
 }
 
 //Finding which squares are valid moves for each player

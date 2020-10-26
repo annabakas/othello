@@ -10,6 +10,7 @@ CMakeFiles/othello_tests.dir/logic.c.o: logic.h
 CMakeFiles/othello_tests.dir/logic.c.o: player.h
 
 CMakeFiles/othello_tests.dir/player.c.o: gameboard.h
+CMakeFiles/othello_tests.dir/player.c.o: logic.h
 CMakeFiles/othello_tests.dir/player.c.o: player.c
 CMakeFiles/othello_tests.dir/player.c.o: player.h
 
