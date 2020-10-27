@@ -120,6 +120,20 @@ TEST(LogicTests, NotBlank) {
     ASSERT_EQ(0, found_blank(&board, row, col));
 }
 
+TEST(LogicTests, NoQuit){
+	othello_board_t board;
+	int invalid_moves = 0;
+	othello_new(&board);
+	ASSERT_EQ(1, quit(&board, invalid_moves));
+}
+
+TEST(LogicTests, DoQuit){
+	othello_board_t board;
+	int invalid_moves = 6;
+	othello_new(&board);
+	ASSERT_EQ(0, quit(&board, invalid_moves));
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
