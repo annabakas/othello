@@ -81,6 +81,24 @@ TEST(PlayerTests, SetOpponent) {
     ASSERT_EQ(PLAYER_A, set_opponent(PLAYER_B));
 }
 
+//Testing within the matrix
+TEST(PlayerTests, NotAvoid) {
+    int r = 0;
+    int c = 0;
+    int col_count = 1;
+    int row_count = 2;
+    ASSERT_EQ(0, avoid(r, c, row_count, col_count));
+}
+
+//Testing outside the matrix
+TEST(PlayerTests, Avoid) {
+    int r = 10;
+    int c = 10;
+    int row_count = 12;
+    int col_count = 12;
+    ASSERT_EQ(1, avoid(r, c, row_count, col_count));
+}
+
 //Testing that correct winner is returned
 TEST(LogicTests, Winner) {
     int play1 = 10;
@@ -120,18 +138,20 @@ TEST(LogicTests, NotBlank) {
     ASSERT_EQ(0, found_blank(&board, row, col));
 }
 
-TEST(LogicTests, NoQuit){
-	othello_board_t board;
-	int invalid_moves = 0;
-	othello_new(&board);
-	ASSERT_EQ(1, quit(&board, invalid_moves));
+//Testing that game shouldn't quit when board isn't full AND invalid moves < 2
+TEST(LogicTests, NoQuit) {
+    othello_board_t board;
+    int invalid_moves = 0;
+    othello_new(&board);
+    ASSERT_EQ(1, quit(&board, invalid_moves));
 }
 
-TEST(LogicTests, DoQuit){
-	othello_board_t board;
-	int invalid_moves = 6;
-	othello_new(&board);
-	ASSERT_EQ(0, quit(&board, invalid_moves));
+//Testing that game should quit when board isn't full AND invalid moves > 2
+TEST(LogicTests, DoQuit) {
+    othello_board_t board;
+    int invalid_moves = 6;
+    othello_new(&board);
+    ASSERT_EQ(0, quit(&board, invalid_moves));
 }
 
 int main(int argc, char **argv) {
