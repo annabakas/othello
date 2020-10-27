@@ -31,6 +31,10 @@ void flip_pieces(othello_board_t *board, int x, int y, int row_count, int col_co
     }
 }
 
+void place_piece(othello_board_t *board, int r, int c, char player){
+	board -> board[r][c] = player;
+}
+
 void make_move(othello_board_t *board, int r, int c, char player) {
     int row_count = 0;
     int col_count = 0;
@@ -41,11 +45,11 @@ void make_move(othello_board_t *board, int r, int c, char player) {
     char other = set_opponent(player);
 
     //Place player's piece on the board
-    board -> board[r][c] = player;
+    place_piece(board, r, c, player);
 
     //Checking squares around player's square for opponent's piece
-    for(row_count = -1; row_count <= 1; row_count++) {
-        for(col_count = -1; col_count <= 1; col_count++) {
+    for(row_count = -1; row_count < 2; row_count++) {
+        for(col_count = -1; col_count < 2; col_count++) {
             //Ignore outside the array or the current square
             if(avoid(r,c,row_count,col_count) == 1) {
                 continue;
@@ -74,9 +78,6 @@ void make_move(othello_board_t *board, int r, int c, char player) {
                     //If square has a player piece -> backtrack to
                     //change all opponent counters to player's counter
                     if(board -> board[x][y] == player) {
-                        /*while(board -> board[x-=row_count][y-=col_count] == other) {
-                            board -> board[x][y] = player;
-                        }*/
                         flip_pieces(board, x, y, row_count, col_count, other, player);
                         break;
                     }
