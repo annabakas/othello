@@ -154,6 +154,14 @@ TEST(LogicTests, DoQuit) {
     ASSERT_EQ(0, quit(&board, invalid_moves));
 }
 
+//Testing that row and column input by user is decremented by one to get row/col index
+TEST(LogicTests, Decrement) {
+    int row = 9;
+    int col = 7;
+    ASSERT_EQ(8, get_index(row));
+    ASSERT_EQ(6, get_index(col));
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
