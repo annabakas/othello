@@ -28,5 +28,9 @@ extern void playable_squares(othello_board_t *board, int r, int c);
 
 extern void clear_playable(othello_board_t *board);
 
+extern void display_score(int playerA_Score, int playerB_Score);
+
+extern void display_current_player(char player);
+
 #endif
 

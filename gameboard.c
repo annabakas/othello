@@ -34,9 +34,9 @@ void displayBoard(othello_board_t *board) {
 
     //Display middle rows
     for(row = 0; row < SIZE; row++) {
-        printf("  +");
+        printf("   ");
         for(col = 0; col<SIZE; col++) {
-            printf("---+");
+            printf("----");
         }
         printf("\n%2d|",row + 1);
 
@@ -46,9 +46,9 @@ void displayBoard(othello_board_t *board) {
         printf("\n");
     }
 
-    printf("  +");
+    printf("   ");
     for(col= 0 ; col<SIZE ; col++) {
-        printf("---+"); // Display bottom line
+        printf("----"); // Display bottom line
     }
     printf("\n");
 }
@@ -108,6 +108,15 @@ int getScore(othello_board_t *board, char player) {
     }
 
     return score;
+}
+
+void display_score(int playerA_Score, int playerB_Score) {
+    printf("\nPlayer A's Score: %d\n", playerA_Score);
+    printf("Player B's Score: %d\n\n", playerB_Score);
+}
+
+void display_current_player(char player) {
+    printf("Player %c, it's your turn!\n\n", player);
 }
 
 //Mark playable squares on the board with *
