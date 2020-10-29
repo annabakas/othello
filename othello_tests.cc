@@ -57,15 +57,6 @@ TEST(GameboardTests, ValidPosition) {
     ASSERT_EQ(1, is_valid_position(0,1));
 }
 
-//Testing that getScore returns correct score
-//In this case: for initial set up
-TEST(UtilityTests, InitialScore) {
-    othello_board_t board;
-    othello_new(&board);
-    ASSERT_EQ(2, getScore(&board, PLAYER_A));
-    ASSERT_EQ(2, getScore(&board, PLAYER_B));
-}
-
 //Testing that prompted move is stored correctly
 TEST(PlayerTests, PromptMove) {
     int row = 0;
@@ -163,8 +154,16 @@ TEST(UtilityTests, Decrement) {
     ASSERT_EQ(6, get_index(col));
 }
 
+//Testing that getScore returns correct score
+//In this case: for initial set up
+TEST(UtilityTests, InitialScore) {
+    othello_board_t board;
+    othello_new(&board);
+    ASSERT_EQ(2, getScore(&board, PLAYER_A));
+    ASSERT_EQ(2, getScore(&board, PLAYER_B));
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
 }
-
