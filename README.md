@@ -41,11 +41,4 @@ The game ends when there are no moves left for both players or when the board is
 
 ## Running the Tests
 
-Run
-
-```
-cmake .
-make
-
-```
 Run `./bin/othello_tests`
