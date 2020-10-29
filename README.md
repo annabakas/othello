@@ -12,18 +12,22 @@ make
 
 ## Running the Game
 
-Run './bin/othello'
+Run `./bin/othello`
 
 ## Game Tutorial
 
 ## Structure
 **logic.c/h**
+* Explain
 
 **gameboard.c/h**
+* Explain
 
 **player.c/h**
+* Explain
 
 **othello.c**
+* Explain
 
 ## Running the Tests
 
@@ -33,4 +37,4 @@ Run
 cmake .
 make
 ```
-Run './bin/othello_tests'
+Run `./bin/othello_tests`
