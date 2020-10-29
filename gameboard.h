@@ -32,5 +32,7 @@ extern void display_score(int playerA_Score, int playerB_Score);
 
 extern void display_current_player(char player);
 
+extern void display_invalid_coords();
+
 #endif
 

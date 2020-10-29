@@ -140,3 +140,7 @@ void clear_playable(othello_board_t *board) {
         }
     }
 }
+
+void display_invalid_coords(){
+	printf("Those coordinates are invalid. Check the board again for valid moves.\n");
+}
