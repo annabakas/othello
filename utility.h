@@ -2,6 +2,9 @@
 #include "gameboard.h"
 #include "logic.h"
 
+#ifndef _UTILITY_H_
+#define _UTILITY_H_
+
 #include <stdio.h>
 #include <stdio.h>
 #include <string.h>
@@ -14,3 +17,5 @@ extern int getScore(othello_board_t *board, char player);
 extern void display_score(int playerA_Score, int playerB_Score);
 extern void display_current_player(char player);
 extern void display_invalid_coords();
+
+#endif

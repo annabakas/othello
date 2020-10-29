@@ -1,6 +1,9 @@
 #include "player.h"
 #include "gameboard.h"
 
+#ifndef _LOGIC_H_
+#define _LOGIC_H_
+
 #include <stdio.h>
 #include <stdio.h>
 #include <string.h>
@@ -13,3 +16,5 @@ extern void flip_pieces(othello_board_t *board, int x, int y, int row_count, int
 extern void place_piece(othello_board_t *board, int r, int c, char player);
 extern void move_to_opponent(int x, int r, int row_count, int y, int c, int col_count);
 extern void move_to_next(int x, int y, int row_count, int col_count);
+
+#endif
