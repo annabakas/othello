@@ -9,13 +9,22 @@ CMakeFiles/othello.dir/logic.c.o
  /home/annabakas/othello-project-annabakas/logic.c
  /home/annabakas/othello-project-annabakas/logic.h
  /home/annabakas/othello-project-annabakas/player.h
+ /home/annabakas/othello-project-annabakas/utility.h
 CMakeFiles/othello.dir/othello.c.o
  /home/annabakas/othello-project-annabakas/gameboard.h
  /home/annabakas/othello-project-annabakas/logic.h
  /home/annabakas/othello-project-annabakas/othello.c
  /home/annabakas/othello-project-annabakas/player.h
+ /home/annabakas/othello-project-annabakas/utility.h
 CMakeFiles/othello.dir/player.c.o
  /home/annabakas/othello-project-annabakas/gameboard.h
  /home/annabakas/othello-project-annabakas/logic.h
  /home/annabakas/othello-project-annabakas/player.c
  /home/annabakas/othello-project-annabakas/player.h
+ /home/annabakas/othello-project-annabakas/utility.h
+CMakeFiles/othello.dir/utility.c.o
+ /home/annabakas/othello-project-annabakas/gameboard.h
+ /home/annabakas/othello-project-annabakas/logic.h
+ /home/annabakas/othello-project-annabakas/player.h
+ /home/annabakas/othello-project-annabakas/utility.c
+ /home/annabakas/othello-project-annabakas/utility.h

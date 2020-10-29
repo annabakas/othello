@@ -27,6 +27,8 @@ player.h
 /home/annabakas/othello-project-annabakas/player.h
 gameboard.h
 /home/annabakas/othello-project-annabakas/gameboard.h
+utility.h
+/home/annabakas/othello-project-annabakas/utility.h
 stdio.h
 -
 stdio.h
@@ -61,8 +63,32 @@ player.h
 /home/annabakas/othello-project-annabakas/player.h
 logic.h
 /home/annabakas/othello-project-annabakas/logic.h
+utility.h
+/home/annabakas/othello-project-annabakas/utility.h
 
 /home/annabakas/othello-project-annabakas/player.c
+player.h
+/home/annabakas/othello-project-annabakas/player.h
+gameboard.h
+/home/annabakas/othello-project-annabakas/gameboard.h
+logic.h
+/home/annabakas/othello-project-annabakas/logic.h
+utility.h
+/home/annabakas/othello-project-annabakas/utility.h
+stdio.h
+-
+stdio.h
+-
+string.h
+-
+stdlib.h
+-
+
+/home/annabakas/othello-project-annabakas/player.h
+gameboard.h
+/home/annabakas/othello-project-annabakas/gameboard.h
+
+/home/annabakas/othello-project-annabakas/utility.h
 player.h
 /home/annabakas/othello-project-annabakas/player.h
 gameboard.h
@@ -77,8 +103,4 @@ string.h
 -
 stdlib.h
 -
-
-/home/annabakas/othello-project-annabakas/player.h
-gameboard.h
-/home/annabakas/othello-project-annabakas/gameboard.h
 

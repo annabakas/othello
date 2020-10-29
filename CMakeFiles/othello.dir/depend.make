@@ -8,14 +8,23 @@ CMakeFiles/othello.dir/logic.c.o: gameboard.h
 CMakeFiles/othello.dir/logic.c.o: logic.c
 CMakeFiles/othello.dir/logic.c.o: logic.h
 CMakeFiles/othello.dir/logic.c.o: player.h
+CMakeFiles/othello.dir/logic.c.o: utility.h
 
 CMakeFiles/othello.dir/othello.c.o: gameboard.h
 CMakeFiles/othello.dir/othello.c.o: logic.h
 CMakeFiles/othello.dir/othello.c.o: othello.c
 CMakeFiles/othello.dir/othello.c.o: player.h
+CMakeFiles/othello.dir/othello.c.o: utility.h
 
 CMakeFiles/othello.dir/player.c.o: gameboard.h
 CMakeFiles/othello.dir/player.c.o: logic.h
 CMakeFiles/othello.dir/player.c.o: player.c
 CMakeFiles/othello.dir/player.c.o: player.h
+CMakeFiles/othello.dir/player.c.o: utility.h
+
+CMakeFiles/othello.dir/utility.c.o: gameboard.h
+CMakeFiles/othello.dir/utility.c.o: logic.h
+CMakeFiles/othello.dir/utility.c.o: player.h
+CMakeFiles/othello.dir/utility.c.o: utility.c
+CMakeFiles/othello.dir/utility.c.o: utility.h
 

@@ -1,1 +1,1 @@
-/usr/bin/c++    -rdynamic CMakeFiles/othello_tests.dir/othello_tests.cc.o CMakeFiles/othello_tests.dir/gameboard.c.o CMakeFiles/othello_tests.dir/player.c.o CMakeFiles/othello_tests.dir/logic.c.o  -o bin/othello_tests  /usr/local/lib/libgtest.a -lpthread -lm 
+/usr/bin/c++    -rdynamic CMakeFiles/othello_tests.dir/othello_tests.cc.o CMakeFiles/othello_tests.dir/gameboard.c.o CMakeFiles/othello_tests.dir/player.c.o CMakeFiles/othello_tests.dir/logic.c.o CMakeFiles/othello_tests.dir/utility.c.o  -o bin/othello_tests  /usr/local/lib/libgtest.a -lpthread -lm 

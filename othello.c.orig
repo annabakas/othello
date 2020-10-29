@@ -4,7 +4,6 @@
 #include "gameboard.h"
 #include "player.h"
 #include "logic.h"
-#include "utility.h"
 
 othello_board_t board;
 
@@ -39,11 +38,11 @@ int main(void) {
                 displayBoard(&board);
                 for(;;) {
                     prompt_move(&row, &col);
-
-                    //Decrement row and column input to get index value
-                    row = get_index(row);
-                    col = get_index(col);
-
+		    
+		    //Decrement row and column input to get index value
+		    row = get_index(row);
+		    col = get_index(col);
+                    
                     //If position entered is valid:
                     //Put move on board
                     //Clear playable moves from board
@@ -55,7 +54,7 @@ int main(void) {
                         break;
                     }
                     else {
-                        display_invalid_coords();
+                        printf("Those coordinates are not valid. Please try again!\n");
                     }
                 }
             }
@@ -75,10 +74,10 @@ int main(void) {
                 for(;;) {
                     prompt_move(&row, &col);
 
-                    //Decrement row and column input by one to get index value
+		    //Decrement row and column input by one to get index value
                     row = get_index(row);
-                    col = get_index(col);
-
+		    col = get_index(col);
+		    
                     //If position entered is valid:
                     //Put move on board
                     //Clear playable moves from board
@@ -90,7 +89,7 @@ int main(void) {
                         break;
                     }
                     else {
-                        display_invalid_coords();
+                        printf("Those coordinates are not valid. Please try again!\n");
                     }
                 }
             }

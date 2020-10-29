@@ -5,7 +5,6 @@
 #include "gameboard.hh"
 #include "player.hh"
 #include "logic.hh"
-#include "utility.hh"
 #include <stdio.h>
 
 //Testing that board is not full at start
@@ -59,7 +58,7 @@ TEST(GameboardTests, ValidPosition) {
 
 //Testing that getScore returns correct score
 //In this case: for initial set up
-TEST(UtilityTests, InitialScore) {
+TEST(GameboardTests, InitialScore) {
     othello_board_t board;
     othello_new(&board);
     ASSERT_EQ(2, getScore(&board, PLAYER_A));
@@ -140,7 +139,7 @@ TEST(LogicTests, NotBlank) {
 }
 
 //Testing that game shouldn't quit when board isn't full AND invalid moves < 2
-TEST(UtilityTests, NoQuit) {
+TEST(LogicTests, NoQuit) {
     othello_board_t board;
     int invalid_moves = 0;
     othello_new(&board);
@@ -148,7 +147,7 @@ TEST(UtilityTests, NoQuit) {
 }
 
 //Testing that game should quit when board isn't full AND invalid moves > 2
-TEST(UtilityTests, DoQuit) {
+TEST(LogicTests, DoQuit) {
     othello_board_t board;
     int invalid_moves = 6;
     othello_new(&board);
@@ -156,11 +155,11 @@ TEST(UtilityTests, DoQuit) {
 }
 
 //Testing that row and column input by user is decremented by one to get row/col index
-TEST(UtilityTests, Decrement) {
-    int row = 9;
-    int col = 7;
-    ASSERT_EQ(8, get_index(row));
-    ASSERT_EQ(6, get_index(col));
+TEST(LogicTests, Decrement){
+	int row = 9;
+	int col = 7;
+	ASSERT_EQ(8, get_index(row));
+	ASSERT_EQ(6, get_index(col));
 }
 
 int main(int argc, char **argv) {

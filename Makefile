@@ -280,6 +280,36 @@ player.c.s:
 	$(MAKE) -f CMakeFiles/othello.dir/build.make CMakeFiles/othello.dir/player.c.s
 .PHONY : player.c.s
 
+utility.o: utility.c.o
+
+.PHONY : utility.o
+
+# target to build an object file
+utility.c.o:
+	$(MAKE) -f CMakeFiles/othello_tests.dir/build.make CMakeFiles/othello_tests.dir/utility.c.o
+	$(MAKE) -f CMakeFiles/othello.dir/build.make CMakeFiles/othello.dir/utility.c.o
+.PHONY : utility.c.o
+
+utility.i: utility.c.i
+
+.PHONY : utility.i
+
+# target to preprocess a source file
+utility.c.i:
+	$(MAKE) -f CMakeFiles/othello_tests.dir/build.make CMakeFiles/othello_tests.dir/utility.c.i
+	$(MAKE) -f CMakeFiles/othello.dir/build.make CMakeFiles/othello.dir/utility.c.i
+.PHONY : utility.c.i
+
+utility.s: utility.c.s
+
+.PHONY : utility.s
+
+# target to generate assembly for a file
+utility.c.s:
+	$(MAKE) -f CMakeFiles/othello_tests.dir/build.make CMakeFiles/othello_tests.dir/utility.c.s
+	$(MAKE) -f CMakeFiles/othello.dir/build.make CMakeFiles/othello.dir/utility.c.s
+.PHONY : utility.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -305,6 +335,9 @@ help:
 	@echo "... player.o"
 	@echo "... player.i"
 	@echo "... player.s"
+	@echo "... utility.o"
+	@echo "... utility.i"
+	@echo "... utility.s"
 .PHONY : help
 
 

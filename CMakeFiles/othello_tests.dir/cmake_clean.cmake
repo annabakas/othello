@@ -3,6 +3,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/othello_tests.dir/logic.c.o"
   "CMakeFiles/othello_tests.dir/othello_tests.cc.o"
   "CMakeFiles/othello_tests.dir/player.c.o"
+  "CMakeFiles/othello_tests.dir/utility.c.o"
   "bin/othello_tests"
   "bin/othello_tests.pdb"
 )

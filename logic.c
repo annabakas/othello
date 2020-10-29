@@ -1,6 +1,7 @@
 #include "logic.h"
 #include "player.h"
 #include "gameboard.h"
+#include "utility.h"
 
 #include <stdio.h>
 #include <stdio.h>

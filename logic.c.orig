@@ -31,6 +31,25 @@ void flip_pieces(othello_board_t *board, int x, int y, int row_count, int col_co
     }
 }
 
+//Places current player piece on the board
+void place_piece(othello_board_t *board, int r, int c, char player) {
+    board -> board[r][c] = player;
+}
+
+//Move to other player's square
+void move_to_opponent(int x, int r, int row_count, int y, int c, int col_count) {
+    x = r + row_count;
+    y = c + col_count;
+}
+
+//Move to next square
+void move_to_next(int x, int y, int row_count, int col_count){
+	x += row_count;
+	y += col_count;
+}
+
+//Places current player's piece
+//Flips opponent's pieces to player's pieces
 void make_move(othello_board_t *board, int r, int c, char player) {
     int row_count = 0;
     int col_count = 0;
@@ -41,11 +60,11 @@ void make_move(othello_board_t *board, int r, int c, char player) {
     char other = set_opponent(player);
 
     //Place player's piece on the board
-    board -> board[r][c] = player;
+    place_piece(board, r, c, player);
 
     //Checking squares around player's square for opponent's piece
-    for(row_count = -1; row_count <= 1; row_count++) {
-        for(col_count = -1; col_count <= 1; col_count++) {
+    for(row_count = -1; row_count < 2; row_count++) {
+        for(col_count = -1; col_count < 2; col_count++) {
             //Ignore outside the array or the current square
             if(avoid(r,c,row_count,col_count) == 1) {
                 continue;
@@ -55,12 +74,10 @@ void make_move(othello_board_t *board, int r, int c, char player) {
             //direction for player's piece so we know which pieces
             //need to be flipped
             if(board -> board[r + row_count][c + col_count] == other) {
-                x = r + row_count;
-                y = c + col_count;
+                move_to_opponent(x, r, row_count, y, c, col_count);
 
                 for(;;) {
-                    x += row_count;
-                    y += col_count;
+                    move_to_next(x, y, row_count, col_count);
 
                     //Move off the board? Break
                     if(off_board(x,y) == 1) {
@@ -74,10 +91,7 @@ void make_move(othello_board_t *board, int r, int c, char player) {
                     //If square has a player piece -> backtrack to
                     //change all opponent counters to player's counter
                     if(board -> board[x][y] == player) {
-                        /*while(board -> board[x-=row_count][y-=col_count] == other) {
-                            board -> board[x][y] = player;
-                        }*/
-			    flip_pieces(board, x, y, row_count, col_count, other, player);
+                        flip_pieces(board, x, y, row_count, col_count, other, player);
                         break;
                     }
                 }
@@ -94,4 +108,22 @@ char get_winner(int playerA_Score, int playerB_Score) {
     else {
         return PLAYER_B;
     }
+}
+
+//Return 1 if board is not full and invalid moves are less than 2
+//Quit gameplay loop is quit() returns 0
+int quit(othello_board_t *board, int invalid_moves) {
+    if((board_full(board) != 1) && invalid_moves < 2) {
+        return 1;
+    }
+    else {
+        return 0;
+    }
+}
+
+//Passes in row/column input by user and decrements it by 1 to get index value
+//Returns decremented value
+int get_index(int x){
+	x--;
+	return x;
 }
