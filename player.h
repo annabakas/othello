@@ -8,5 +8,5 @@ extern void print_possible_moves(int r, int c);
 extern void init_moves(int moves[][SIZE]);
 extern int avoid(int r, int c, int row_count, int col_count);
 extern char set_opponent(char player);
-
+extern void pass_move(char *again);
 #endif

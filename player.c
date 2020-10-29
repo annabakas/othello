@@ -14,6 +14,13 @@ void prompt_move(int *r, int *c) {
     fflush(stdin);
 }
 
+//Display if player has to pass their turn
+void pass_move(char *again) {
+    fflush(stdin);
+    printf("You have to pass. Please press enter");
+    scanf("%c", again);
+}
+
 //Print out possible moves for player to make at their turn
 void print_possible_moves(int r, int c) {
     int x = r;
@@ -54,7 +61,9 @@ char set_opponent(char player) {
 }
 
 //Finding which squares are valid moves for each player
-//Returns number of moves that are valid
+//A valid move is one in which the current player's piece is adjacent
+//to an opponent's piece.
+//Returns total number of moves that are valid
 int valid_moves(othello_board_t *board, int moves[][SIZE], char player) {
     int row_count = 0;
     int col_count = 0;
@@ -108,12 +117,11 @@ int valid_moves(othello_board_t *board, int moves[][SIZE], char player) {
 
 
                             //If square has a player piece -> valid move
-                            //Mark valid move as one in moves array
-                            //Increment number of moves count
+                            //Mark valid move as 1 in moves array
+                            //Increment total_moves count
                             //Break to keep checking other squares
                             if(board -> board[x][y] == player) {
                                 moves[r][c] = 1;
-                                //print_possible_moves(r,c);
                                 playable_squares(board, r, c);
                                 total_moves++;
                                 break;
