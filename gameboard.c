@@ -95,30 +95,6 @@ int compareBoards() {
     return 1;
 }*/
 
-//Returns score of current player
-//i.e. the number of pieces they have on the board currently
-int getScore(othello_board_t *board, char player) {
-    int score = 0;
-    for(int row = 0; row < SIZE; row++) {
-        for(int col = 0; col < SIZE; col++) {
-            if(board -> board[row][col] == player) {
-                score++;
-            }
-        }
-    }
-
-    return score;
-}
-
-void display_score(int playerA_Score, int playerB_Score) {
-    printf("\nPlayer A's Score: %d\n", playerA_Score);
-    printf("Player B's Score: %d\n\n", playerB_Score);
-}
-
-void display_current_player(char player) {
-    printf("Player %c, it's your turn!\n\n", player);
-}
-
 //Mark playable squares on the board with *
 void playable_squares(othello_board_t *board, int r, int c) {
     for(int row = 0; row < SIZE; row++) {
@@ -139,8 +115,4 @@ void clear_playable(othello_board_t *board) {
             }
         }
     }
-}
-
-void display_invalid_coords(){
-	printf("Those coordinates are invalid. Check the board again for valid moves.\n");
 }
