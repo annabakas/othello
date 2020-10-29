@@ -13,6 +13,7 @@ make
 
 ## Running the Game
 
-Run ```bash
-./bin/othello
+Run 
+```bash 
+./bin/othello 
 ```
