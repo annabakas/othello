@@ -19,25 +19,25 @@ Othello can be played by two human players or one human player versus the comput
 
 To start, the board is initialized with 2 of each player's pieces at the center of the board. Valid plays are shown on the board by an asterisk mark. The player should input the position of where they want to place a piece by inputting the row and column separated by a single space (eg: 2 4).
 
-A valid move is one where a player flips at least one of the opponent's piece by flanking it.
+A valid move is one where a player flips at least one of the opponent's pieces by flanking it.
 
 The game ends when there are no moves left for both players or when the board is completely filled.
 
 ## Structure
 **logic.c/h**
-* Explain
+* Contains functions and declarations needed to place a player's piece on the board.
 
 **gameboard.c/h**
-* Explain
+* Contains functions, declarations, and struct relating to the gameboard.
 
 **player.c/h**
-* Explain
+* Contains functions and declarations needed to determine valid moves for a player.
 
 **utlity.c/h**
-* Explain
+* Contains functions and declarations needed to perform generic actions throughout gameplay.
 
 **othello.c**
-* Explain
+* Contains main where gameplay takes place
 
 ## Running the Tests
 
