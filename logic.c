@@ -107,31 +107,3 @@ void make_move(othello_board_t *board, int r, int c, char player) {
         }
     }
 }
-
-//Returning player who has the highest score i.e. the winner
-char get_winner(int playerA_Score, int playerB_Score) {
-    if(playerA_Score > playerB_Score) {
-        return PLAYER_A;
-    }
-    else {
-        return PLAYER_B;
-    }
-}
-
-//Return 1 if board is not full and invalid moves are less than 2
-//Quit gameplay loop is quit() returns 0
-int quit(othello_board_t *board, int invalid_moves) {
-    if((board_full(board) != 1) && invalid_moves < 2) {
-        return 1;
-    }
-    else {
-        return 0;
-    }
-}
-
-//Passes in row/column input by user and decrements it by 1 to get index value
-//Returns decremented value
-int get_index(int x) {
-    x--;
-    return x;
-}
