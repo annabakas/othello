@@ -65,6 +65,6 @@ void display_current_player(char player) {
 
 
 //Displays message when invalid coordinates are entered
-void display_invalid_coords(){
-	printf("Those coordinates are invalid. Check the board again for valid moves.\n");
+void display_invalid_coords() {
+    printf("Those coordinates are invalid. Check the board again for valid moves.\n");
 }
