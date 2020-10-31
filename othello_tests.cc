@@ -183,6 +183,15 @@ TEST(UtilityTests, InitialScore) {
     ASSERT_EQ(2, getScore(&board, PLAYER_B));
 }
 
+//Testing that getScore returns correct score after counter is placed on the board
+TEST(UtilityTests, UpdatedScore){
+	othello_board_t board;
+	othello_new(&board);
+	board.board[1][1] = PLAYER_A;
+	ASSERT_EQ(3, getScore(&board, PLAYER_A));
+	ASSERT_EQ(2, getScore(&board, PLAYER_B));
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
