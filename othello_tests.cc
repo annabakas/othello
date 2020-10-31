@@ -8,12 +8,26 @@
 #include "utility.hh"
 #include <stdio.h>
 
-//Testing that board is not full at start
-TEST(GameboardTests, isFull) {
+//Testing that not full board returns 0
+TEST(GameboardTests, NotFull) {
     othello_board_t board;
     othello_new(&board);
-    ASSERT_EQ(board_full(&board), 0);
+    ASSERT_EQ(0, board_full(&board));
 }
+
+//Testing that if board is full, return 1
+TEST(GameboardTests, IsFull) {
+    othello_board_t board;
+    othello_new(&board);
+    for(int row = 0; row < SIZE; row++) {
+        for(int col = 0; col < SIZE; col++) {
+            board.board[row][col] = PLAYER_A;
+        }
+    }
+
+    ASSERT_EQ(1, board_full(&board));
+}
+
 
 //Testing that board was initialized with four center pieces
 TEST(GameboardTests, InitializedCenter) {
@@ -51,10 +65,14 @@ TEST(GameboardTests, InitializedBlanks) {
     }
 }
 
-//Testing that position entered is valid
+//Testing that valid coordinate returns 1
 TEST(GameboardTests, ValidPosition) {
-    ASSERT_EQ(0, is_valid_position(10,2));
     ASSERT_EQ(1, is_valid_position(0,1));
+}
+
+//Testing that invalid coordinate returns 0
+TEST(GameboardTests, InvalidPosition) {
+    ASSERT_EQ(0, is_valid_position(10,2));
 }
 
 //Testing that prompted move is stored correctly
@@ -74,6 +92,7 @@ TEST(PlayerTests, SetOpponent) {
 }
 
 //Testing within the matrix
+//Return 0 if within the matrix
 TEST(PlayerTests, NotAvoid) {
     int r = 0;
     int c = 0;
@@ -83,6 +102,7 @@ TEST(PlayerTests, NotAvoid) {
 }
 
 //Testing outside the matrix
+//Return 1 if outside the matrix
 TEST(PlayerTests, Avoid) {
     int r = 10;
     int c = 10;
