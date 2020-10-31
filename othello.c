@@ -26,7 +26,7 @@ int main(void) {
     //Initial four pieces on the board
     total_moves = 4;
 
-    printf("Welcome to Othello! Playable squares will be marked with a *\n");
+    welcome();
 
     do {
         playerA_Score = getScore(&board, player);

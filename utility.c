@@ -8,6 +8,11 @@
 #include <string.h>
 #include <stdlib.h>
 
+//Display welcome message
+void welcome() {
+    printf("Welcome to Othello! Player A will go first. Playable squares are marked with an asterisk (*)\n");
+}
+
 //Returning player who has the highest score i.e. the winner
 char get_winner(int playerA_Score, int playerB_Score) {
     if(playerA_Score > playerB_Score) {

@@ -10,6 +10,7 @@
 #include <string.h>
 #include <stdlib.h>
 
+extern void welcome();
 extern char get_winner(int playerA_Score, int playerB_Score);
 extern int quit(othello_board_t *board, int invalid_moves);
 extern int get_index(int x);
