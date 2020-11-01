@@ -102,7 +102,7 @@ int valid_moves(othello_board_t *board, int moves[][SIZE], char player) {
                         y = c + col_count;
 
                         //Looking for player piece
-                        for(;;) {
+                        while(1) {
                             x += row_count;
                             y += col_count;
 

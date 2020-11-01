@@ -85,7 +85,7 @@ void make_move(othello_board_t *board, int r, int c, char player) {
             if(board -> board[r + row_count][c + col_count] == other) {
                 move_to_opponent(x, r, row_count, y, c, col_count);
 
-                for(;;) {
+                while(1) {
                     move_to_next(x, y, row_count, col_count);
 
                     //Move off the board? Break
