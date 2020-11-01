@@ -2,4 +2,8 @@
 
 2. This week, I want to start working on Milestone 3. I didn't get to Milestone 3 this past week because I was focused on making more tests and cleaning up the code I already had before moving forward.
 
-3. Demo: 
+3. Demo:
+https://youtu.be/iINAjwVG7-0
+
+4. Side note:
+My demo video ran a little long because I walked through all the code I have so far. I had to trim the demo of me running ./bin/othello. Running the game is the same as it was last week, though, because this week I only focused on cleaning up code, making more tests, and modifying the structure of my program. The gameplay is still the same as last week with human vs. human play.
