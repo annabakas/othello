@@ -37,7 +37,7 @@ int main(void) {
             display_current_player(player);
             if(valid_moves(&board,moves,player)) {
                 displayBoard(&board);
-                for(;;) {
+                while(1) {
                     prompt_move(&row, &col);
 
                     //Decrement row and column input to get index value
@@ -72,7 +72,7 @@ int main(void) {
             display_current_player(other);
             if(valid_moves(&board,moves,other)) {
                 displayBoard(&board);
-                for(;;) {
+                while(1) {
                     prompt_move(&row, &col);
 
                     //Decrement row and column input by one to get index value
