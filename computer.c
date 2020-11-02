@@ -13,7 +13,7 @@
 void copy_board(othello_board_t *board, char tempBoard[SIZE][SIZE]) {
     for(int row = 0; row < SIZE; row++) {
         for(int col = 0; col < SIZE; col++) {
-            tempBoard = board -> board[row][col];
+            tempBoard[row][col] = board -> board[row][col];
         }
     }
 }

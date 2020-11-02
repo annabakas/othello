@@ -5,6 +5,7 @@
 #include "player.h"
 #include "logic.h"
 #include "utility.h"
+#include "computer.h"
 
 othello_board_t board;
 

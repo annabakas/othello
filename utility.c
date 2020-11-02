@@ -2,6 +2,7 @@
 #include "logic.h"
 #include "player.h"
 #include "gameboard.h"
+#include "computer.h"
 
 #include <stdio.h>
 #include <stdio.h>

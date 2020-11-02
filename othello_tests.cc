@@ -6,6 +6,8 @@
 #include "player.hh"
 #include "logic.hh"
 #include "utility.hh"
+#include "computer.hh"
+
 #include <stdio.h>
 
 //Testing that not full board returns 0

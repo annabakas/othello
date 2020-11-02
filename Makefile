@@ -136,6 +136,36 @@ othello/fast:
 	$(MAKE) -f CMakeFiles/othello.dir/build.make CMakeFiles/othello.dir/build
 .PHONY : othello/fast
 
+computer.o: computer.c.o
+
+.PHONY : computer.o
+
+# target to build an object file
+computer.c.o:
+	$(MAKE) -f CMakeFiles/othello_tests.dir/build.make CMakeFiles/othello_tests.dir/computer.c.o
+	$(MAKE) -f CMakeFiles/othello.dir/build.make CMakeFiles/othello.dir/computer.c.o
+.PHONY : computer.c.o
+
+computer.i: computer.c.i
+
+.PHONY : computer.i
+
+# target to preprocess a source file
+computer.c.i:
+	$(MAKE) -f CMakeFiles/othello_tests.dir/build.make CMakeFiles/othello_tests.dir/computer.c.i
+	$(MAKE) -f CMakeFiles/othello.dir/build.make CMakeFiles/othello.dir/computer.c.i
+.PHONY : computer.c.i
+
+computer.s: computer.c.s
+
+.PHONY : computer.s
+
+# target to generate assembly for a file
+computer.c.s:
+	$(MAKE) -f CMakeFiles/othello_tests.dir/build.make CMakeFiles/othello_tests.dir/computer.c.s
+	$(MAKE) -f CMakeFiles/othello.dir/build.make CMakeFiles/othello.dir/computer.c.s
+.PHONY : computer.c.s
+
 gameboard.o: gameboard.c.o
 
 .PHONY : gameboard.o
@@ -320,6 +350,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... othello_tests"
 	@echo "... othello"
+	@echo "... computer.o"
+	@echo "... computer.i"
+	@echo "... computer.s"
 	@echo "... gameboard.o"
 	@echo "... gameboard.i"
 	@echo "... gameboard.s"
