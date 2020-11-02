@@ -17,3 +17,11 @@ void copy_board(othello_board_t *board, char tempBoard[SIZE][SIZE]) {
         }
     }
 }
+
+//Returns current player's score minus opponent's score
+int heuristic(othello_board_t *board, char player) {
+    char opponent = set_opponent(player);
+    int playerScore = getScore(board, player);
+    int opponentScore = getScore(board, opponent);
+    return (playerScore - opponentScore);
+}
