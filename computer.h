@@ -10,4 +10,5 @@
 #include <string.h>
 #include <stdlib.h>
 
+void copy_board(othello_board_t *board, char tempBoard[SIZE][SIZE]);
 #endif
