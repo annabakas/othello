@@ -11,7 +11,7 @@
 #include <string.h>
 #include <stdlib.h>
 
-void copy_board(othello_board_t *board, char tempBoard[SIZE][SIZE]);
+void copy_board(othello_board_t *board, othello_board_t *tempBoard);
 int heuristic(othello_board_t *board, char player);
-
+void decision(othello_board_t *board, int moves[][SIZE], char player);
 #endif
