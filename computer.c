@@ -28,39 +28,31 @@ int heuristic(othello_board_t *board, char player) {
     return (playerScore - opponentScore);
 }
 
+int best(othello_board_t *board, int moves[][SIZE], char player) {
+}
+
 void decision(othello_board_t *board, int moves[][SIZE], char player) {
-    int numMoves;
+    //Set opponent
     char opponent = set_opponent(player);
+    //Temporary board
     othello_board_t tempBoard;
+    //Temporary valid moves array
     int tempMoves[SIZE][SIZE];
-    int row, col;
-    int moveX[60], moveY[60];
 
-
-    numMoves = valid_moves(&tempBoard, tempMoves, player);
-
-    if(numMoves == 0) {
-        row = -1;
-        col = -1;
-    }
-    else {
-        int bestMoveVal = -99999;
-        int bestX = moveX[60], bestY = moveY[0];
-
-        for(int i = 0; i < numMoves; i++) {
-            copy_board(board, &tempBoard);
-            make_move(tempBoard, row, col, player);
-
-            int val = minimaxVal(&tempBoard, player, opponent, 1);
-
-            if(val > bestMoveVal) {
-                bestMoveVal = val;
-                bestX = moveX[i];
-                bestY = moveY[i];
+    //Go through all valid moves
+    for(int r = 0; r < SIZE; r++) {
+        for(int c = 0; c < SIZE; c++) {
+            if(moves[r][c] == 0) {
+                continue;
             }
+            //Copy board into tempBoard
+            copy_board(board, &tempBoard);
+            //Make valid move onto temporary board
+            make_move(&tempBoard, r, c, player);
+
+            //Find score for opponent's best move
+            int val = best(&tempBoard, tempMoves, opponent);
         }
-        x = bestX;
-        y = bestY;
     }
 }
 
