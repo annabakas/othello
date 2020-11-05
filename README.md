@@ -33,6 +33,9 @@ The game ends when there are no moves left for both players or when the board is
 **player.c/h**
 * Contains functions and declarations needed to determine valid moves for a player.
 
+**computer.c/h**
+* Contains functions and declrations needed for computer to decide best move.
+
 **utlity.c/h**
 * Contains functions and declarations needed to perform generic actions throughout gameplay.
 

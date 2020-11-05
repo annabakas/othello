@@ -45,7 +45,7 @@ int best(othello_board_t *board, int moves[][SIZE], char player, int search) {
             make_move(&tempBoard, r, c, player);
 
             if(newScore < score) {
-                score = newScore;
+                score = getScore(&tempBoard, player);
             }
         }
     }
@@ -92,7 +92,8 @@ void decision(othello_board_t *board, int moves[][SIZE], char player) {
             }
         }
     }
-
+	printf("%d\n", best_row);
+	printf("%d\n", best_col);
     make_move(board, best_row, best_col, player);
 }
 

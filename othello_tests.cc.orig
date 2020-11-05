@@ -30,6 +30,7 @@ TEST(GameboardTests, IsFull) {
     ASSERT_EQ(1, board_full(&board));
 }
 
+
 //Testing that board was initialized with four center pieces
 TEST(GameboardTests, InitializedCenter) {
     othello_board_t board;
@@ -193,20 +194,20 @@ TEST(UtilityTests, UpdatedScore) {
     ASSERT_EQ(2, getScore(&board, PLAYER_B));
 }
 
-//Testing that board was successfully copied into temporary board
-TEST(ComputerTests, Copied) {
-    othello_board_t board;
-    othello_new(&board);
+//Testing that board was successfully copied into another board
+TEST(ComputerTests, Copied){
+	othello_board_t board;
+	othello_new(&board);
 
-    othello_board_t tempBoard;
-    copy_board(&board, &tempBoard);
+	othello_board_t tempBoard;
+	copy_board(&board, &tempBoard);
 
-    char pieceA[3] = "A";
+char pieceA[3] = "A";
     char pieceB[3] = "B";
-    char player_A_init[3] = {tempBoard.board[3][3]};
-    char player_A_init2[3] = {tempBoard.board[4][4]};
-    char player_B_init[3] = {tempBoard.board[3][4]};
-    char player_B_init2[3] = {tempBoard.board[4][3]};
+    char player_A_init[3] = {tempBoard.tempBoard[3][3]};
+    char player_A_init2[3] = {tempBoard. tempBoard[4][4]};
+    char player_B_init[3] = {tempBoard.tempBoard[3][4]};
+    char player_B_init2[3] = {tempBoard.tempBoard[4][3]};
     ASSERT_STREQ(pieceA,player_A_init);
     ASSERT_STREQ(pieceA,player_A_init2);
     ASSERT_STREQ(pieceB,player_B_init);
