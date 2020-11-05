@@ -11,13 +11,11 @@
 
 //Make copy of board
 void copy_board(othello_board_t *board, othello_board_t *tempBoard) {
-    /*for(int row = 0; row < SIZE; row++) {
+    for(int row = 0; row < SIZE; row++) {
         for(int col = 0; col < SIZE; col++) {
-            tempBoard -> tempBoard[row][col] = board -> board[row][col];
+            tempBoard -> board[row][col] = board -> board[row][col];
         }
-    }*/
-
-    tempBoard = board;
+    }
 }
 
 //Returns current player's score minus opponent's score

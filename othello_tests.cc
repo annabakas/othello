@@ -194,6 +194,26 @@ TEST(UtilityTests, UpdatedScore) {
     ASSERT_EQ(2, getScore(&board, PLAYER_B));
 }
 
+//Testing that board was successfully copied into temporary board
+TEST(ComputerTests, Copied) {
+    othello_board_t board;
+    othello_new(&board);
+
+    othello_board_t tempBoard;
+    copy_board(&board, &tempBoard);
+
+    char pieceA[3] = "A";
+    char pieceB[3] = "B";
+    char player_A_init[3] = {tempBoard.board[3][3]};
+    char player_A_init2[3] = {tempBoard.board[4][4]};
+    char player_B_init[3] = {tempBoard.board[3][4]};
+    char player_B_init2[3] = {tempBoard.board[4][3]};
+    ASSERT_STREQ(pieceA,player_A_init);
+    ASSERT_STREQ(pieceA,player_A_init2);
+    ASSERT_STREQ(pieceB,player_B_init);
+    ASSERT_STREQ(pieceB,player_B_init2);
+}
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
