@@ -73,7 +73,11 @@ int main(void) {
             display_current_player(other);
             if(valid_moves(&board,moves,other)) {
                 displayBoard(&board);
-                while(1) {
+		invalid_moves = 0;
+		decision(&board, moves, other);
+		total_moves++;
+	    }
+               /* while(1) {
                     prompt_move(&row, &col);
 
                     //Decrement row and column input by one to get index value
@@ -94,7 +98,7 @@ int main(void) {
                         display_invalid_coords();
                     }
                 }
-            }
+            }*/
             else {
                 if(++invalid_moves < 2) {
                     pass_move(&again);
