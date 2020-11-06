@@ -25,6 +25,8 @@ string.h
 -
 stdlib.h
 -
+time.h
+-
 
 /home/annabakas/othello-project-annabakas/computer.h
 player.h

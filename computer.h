@@ -17,4 +17,6 @@ int best(othello_board_t *board, int moves[][SIZE], char player, int search);
 void assign_best(int new_score, int score, int best_row, int row, int best_col, int col);
 void decision(othello_board_t *board, int moves[][SIZE], char player);
 
+void randomPick(othello_board_t *board, int moves[][SIZE], char player);
+int rand(void);
 #endif
