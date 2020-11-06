@@ -44,8 +44,10 @@ int best(othello_board_t *board, int moves[][SIZE], char player, int search) {
 
             make_move(&tempBoard, r, c, player);
 
-            if(newScore < score) {
-                score = getScore(&tempBoard, player);
+            newScore = getScore(&tempBoard, player);
+            printf("new score: %d\n", newScore);
+            if(score < newScore) {
+                score = newScore;
             }
         }
     }
@@ -79,21 +81,29 @@ void decision(othello_board_t *board, int moves[][SIZE], char player) {
             }
             //Copy board into tempBoard
             copy_board(board, &tempBoard);
+
             //Make valid move onto temporary board
             make_move(&tempBoard, r, c, player);
 
             valid_moves(&tempBoard, tempMoves, opponent);
+            //print_possible_moves(r,c);
 
             //Find score for opponent's best move
             int val = best(&tempBoard, tempMoves, opponent, 1);
-
+            printf("%d\n", val);
+            //printf("row: %d, col: %d\n", r, c);
             if(val < score) {
-                assign_best(val, score, best_row, r, best_col, c);
+                //assign_best(val, score, best_row, r, best_col, c);
+                score = val;
+                best_row = r;
+                best_col = c;
+                printf("best row: %d\n best col: %d\n", best_row, best_col);
             }
         }
     }
-	printf("%d\n", best_row);
-	printf("%d\n", best_col);
+    //printf("%d\n", best_row);
+    //printf("%d\n", best_col);
+
     make_move(board, best_row, best_col, player);
 }
 
