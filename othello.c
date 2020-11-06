@@ -75,7 +75,7 @@ int main(void) {
                 displayBoard(&board);
                 invalid_moves = 0;
                 //decision(&board, moves, other);
-		randomPick(&board, moves, other);
+		randomPick(&board, moves, other, total_moves);
                 total_moves++;
             }
             /* while(1) {

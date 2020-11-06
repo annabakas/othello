@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <time.h>
 
 //Make copy of board
 void copy_board(othello_board_t *board, othello_board_t *tempBoard) {
@@ -44,8 +45,8 @@ int best(othello_board_t *board, int moves[][SIZE], char player, int search) {
 
             make_move(&tempBoard, r, c, player);
 
-	    newScore = getScore(&tempBoard, player);
-		printf("new score: %d\n", newScore);
+            newScore = getScore(&tempBoard, player);
+            printf("new score: %d\n", newScore);
             if(score < newScore) {
                 score = newScore;
             }
@@ -86,18 +87,18 @@ void decision(othello_board_t *board, int moves[][SIZE], char player) {
             make_move(&tempBoard, r, c, player);
 
             valid_moves(&tempBoard, tempMoves, opponent);
-	    //print_possible_moves(r,c);
+            //print_possible_moves(r,c);
 
             //Find score for opponent's best move
             int val = best(&tempBoard, tempMoves, opponent, 1);
-		printf("%d\n", val);
-		//printf("row: %d, col: %d\n", r, c);
+            printf("%d\n", val);
+            //printf("row: %d, col: %d\n", r, c);
             if(val < score) {
                 //assign_best(val, score, best_row, r, best_col, c);
-		score = val;
-		best_row = r;
-		best_col = c;
-		printf("best row: %d\n best col: %d\n", best_row, best_col);
+                score = val;
+                best_row = r;
+                best_col = c;
+                printf("best row: %d\n best col: %d\n", best_row, best_col);
             }
         }
     }
@@ -105,6 +106,39 @@ void decision(othello_board_t *board, int moves[][SIZE], char player) {
     //printf("%d\n", best_col);
 
     make_move(board, best_row, best_col, player);
+}
+int rand(void){}
+void randomPick(othello_board_t *board, int moves[][SIZE], char player){
+	time_t t;
+	srand((unsigned)time(&t));
+	int validRows[SIZE] = {0};
+	int validCols[SIZE] = {0};
+	int randomRow = 0;
+	int randomCol = 0;
+	//int r = moves[rand() % SIZE][rand() % SIZE];
+
+	for(int row = 0; row < SIZE; row++){
+		for(int col = 0; col < SIZE; col++){
+			if(moves[row][col] == 1){
+				//printf("%d %d\n", row, col);
+				validRows[row] = row;
+				validCols[col] = col;
+				printf("rows: %d ", validRows[row]);
+				printf("cols: %d\n", validCols[col]);
+			}
+		}
+	}
+
+	for(int w = 0; w < SIZE; w++){
+		for(int y = 0; y < SIZE; y++){
+			if(validRows[w] != 0 && validCols[y] != 0){
+				printf("rows: %d ", validRows[w]);
+				printf("cols: %d\n", validCols[y]);
+		}
+		}
+	}
+	
+	//printf("%d %d\n", randomRow, randomCol);
 }
 
 

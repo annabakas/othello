@@ -107,29 +107,33 @@ void decision(othello_board_t *board, int moves[][SIZE], char player) {
 
     make_move(board, best_row, best_col, player);
 }
-int rand(void){}
-void randomPick(othello_board_t *board, int moves[][SIZE], char player){
-	time_t t;
-	srand((unsigned)time(&t));
-	int validRows[SIZE] = {0};
-	int validCols[SIZE] = {0};
-	int randomRow = 0;
-	int randomCol = 0;
-	//int r = moves[rand() % SIZE][rand() % SIZE];
+int rand(void) {}
+void randomPick(othello_board_t *board, int moves[][SIZE], char player, int numMoves) {
+    time_t t;
+    srand((unsigned)time(&t));
+    
+    int validRows[SIZE] = {0};
+    int validCols[SIZE] = {0};
+    int randomRow = 0;
+    int randomCol = 0;
+    int randomIndex = 0;
+    //int r = moves[rand() % SIZE][rand() % SIZE];
 
-	for(int row = 0; row < SIZE; row++){
-		for(int col = 0; col < SIZE; col++){
-			if(moves[row][col] == 1){
-				//printf("%d %d\n", row, col);
-				validRows[row] = row;
-				validCols[col] = col;
-				printf("rows: %d ", validRows[row]);
-				printf("cols: %d\n", validCols[col]);
-			}
-		}
-	}
+    for(int row = 0; row < SIZE; row++) {
+        for(int col = 0; col < SIZE; col++) {
+            if(moves[row][col] == 1) {
+                //printf("%d %d\n", row, col);
+                validRows[row] = row;
+                validCols[col] = col;
+                
+		printf("rows: %d ", validRows[row]);
+                printf("cols: %d\n", validCols[col]);
+            }
+        }
+    }
 
-	//printf("%d %d\n", randomRow, randomCol);
+    randomIndex = rand() % SIZE;
+    printf("Random Row: %d\n", validRows[randomIndex]);
 }
 
 
