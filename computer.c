@@ -107,35 +107,3 @@ void decision(othello_board_t *board, int moves[][SIZE], char player) {
 
     make_move(board, best_row, best_col, player);
 }
-int rand(void) {}
-void randomPick(othello_board_t *board, int moves[][SIZE], char player, int numMoves) {
-    int validRows[SIZE] = {0};
-    int validCols[SIZE] = {0};
-    int randomRow = 0;
-    int randomCol = 0;
-    int randomIndex = 0;
-
-    printf("possible moves: %d\n", numMoves);
-
-    //srand(time(NULL));
-
-    for(int row = 0; row < SIZE; row++) {
-        for(int col = 0; col < SIZE; col++) {
-            if(moves[row][col] == 1) {
-                //printf("%d %d\n", row, col);
-                validRows[row] = row;
-                validCols[col] = col;
-
-                printf("rows: %d ", validRows[row]);
-                printf("cols: %d\n", validCols[col]);
-
-		
-		//printf("Random Index: %d\n", randomIndex);
-	    }
-        }
-    }
-    randomIndex = rand() % SIZE;
-    printf("Random Row: %d\n", randomIndex);
-}
-
-

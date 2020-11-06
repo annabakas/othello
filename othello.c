@@ -6,12 +6,10 @@
 #include "logic.h"
 #include "utility.h"
 #include "computer.h"
-#include <time.h>
 
 othello_board_t board;
 
 int main(void) {
-    srand(time(0));
     int start = 0;
     char again = 0;
     int total_moves = 0;
