@@ -6,10 +6,12 @@
 #include "logic.h"
 #include "utility.h"
 #include "computer.h"
+#include <time.h>
 
 othello_board_t board;
 
 int main(void) {
+	srand(time(NULL));
     int start = 0;
     char again = 0;
     int total_moves = 0;
@@ -73,31 +75,32 @@ int main(void) {
             display_current_player(other);
             if(valid_moves(&board,moves,other)) {
                 displayBoard(&board);
-		invalid_moves = 0;
-		decision(&board, moves, other);
-		total_moves++;
-	    }
-               /* while(1) {
-                    prompt_move(&row, &col);
+                invalid_moves = 0;
+                //decision(&board, moves, other);
+		randomPick(&board, moves, other, total_moves);
+                total_moves++;
+            }
+            /* while(1) {
+                 prompt_move(&row, &col);
 
-                    //Decrement row and column input by one to get index value
-                    row = get_index(row);
-                    col = get_index(col);
+                 //Decrement row and column input by one to get index value
+                 row = get_index(row);
+                 col = get_index(col);
 
-                    //If position entered is valid:
-                    //Put move on board
-                    //Clear playable moves from board
-                    //Increment totals moves by one
-                    if(is_valid_position(row,col) == 1 && moves[row][col]) {
-                        make_move(&board, row, col, other);
-                        clear_playable(&board);
-                        total_moves++;
-                        break;
-                    }
-                    else {
-                        display_invalid_coords();
-                    }
-                }
+                 //If position entered is valid:
+                 //Put move on board
+                 //Clear playable moves from board
+                 //Increment totals moves by one
+                 if(is_valid_position(row,col) == 1 && moves[row][col]) {
+                     make_move(&board, row, col, other);
+                     clear_playable(&board);
+                     total_moves++;
+                     break;
+                 }
+                 else {
+                     display_invalid_coords();
+                 }
+             }
             }*/
             else {
                 if(++invalid_moves < 2) {
