@@ -74,8 +74,10 @@ int main(void) {
             if(valid_moves(&board,moves,other)) {
                 displayBoard(&board);
                 invalid_moves = 0;
-                decision(&board, moves, other);
-                //randomPick(&board, moves, other, total_moves);
+                while(1){
+			decision(&board, moves, other);
+			break;
+		}
 		clear_playable(&board);
                 total_moves++;
             }
