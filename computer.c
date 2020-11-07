@@ -89,11 +89,14 @@ void decision(othello_board_t *board, int moves[][SIZE], char player) {
             make_move(&tempBoard, r, c, player);
 
             int tempScore = getScore(&tempBoard, player);
+	    int oppScore = getScore(&tempBoard, opponent);
 
             if(tempScore > max) {
                 max = tempScore;
-                best_row = r;
-                best_col = c;
+		if(max >= oppScore){
+			best_row = r;
+			best_col = c;
+		}
             }
 
             //printf("Temporary Move #%d\n", r);
@@ -120,7 +123,8 @@ void decision(othello_board_t *board, int moves[][SIZE], char player) {
                 }*/
         }
     }
-    //printf("best row: %d best col: %d\n", best_row, best_col);
+    
+    printf("best row: %d best col: %d best score: %d\n", best_row, best_col, max);
 
     make_move(board, best_row, best_col, player);
 }
