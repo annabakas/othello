@@ -74,11 +74,8 @@ int main(void) {
             if(valid_moves(&board,moves,other)) {
                 displayBoard(&board);
                 invalid_moves = 0;
-                while(1){
-			decision(&board, moves, other);
-			break;
-		}
-		clear_playable(&board);
+                decision(&board, moves, other);
+                clear_playable(&board);
                 total_moves++;
             }
             /* while(1) {

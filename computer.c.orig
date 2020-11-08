@@ -49,7 +49,7 @@ int best(othello_board_t *board, int moves[][SIZE], char player, int search) {
             //printf("new score: %d\n", newScore);
             if(score < newScore) {
                 score = newScore;
-		//printf("Score: %d\n", score);
+                //printf("Score: %d\n", score);
             }
         }
     }
@@ -88,39 +88,46 @@ void decision(othello_board_t *board, int moves[][SIZE], char player) {
             //Make valid move onto temporary board
             make_move(&tempBoard, r, c, player);
 
+            //Score for each valid move
 	    int tempScore = getScore(&tempBoard, player);
+	    //Score for opponent after valid move
+	    int oppScore = getScore(&tempBoard, opponent);
 
-	    if(tempScore > max){
-		    max = tempScore;
-		    best_row = r;
-		    best_col = c;
-	    }
-	    
-	    //printf("Temporary Move #%d\n", r);
+            if(tempScore > max) {
+                max = tempScore;
+		//If computer's best score is > human player's score, mark that row and col as best
+		if(max >= oppScore){
+			best_row = r;
+			best_col = c;
+		}
+            }
 
-	    //Checking temporary board state
-	    //displayBoard(&tempBoard);
+            //printf("Temporary Move #%d\n", r);
 
-	    //Find valid moves for opponent after current player makes move
+            //Checking temporary board state
+            //displayBoard(&tempBoard);
 
-	    /*valid_moves(&tempBoard, tempMoves, opponent);
+            //Find valid moves for opponent after current player makes move
 
-            
-	    //Find score for opponent's best move
-            int val = best(&tempBoard, tempMoves, opponent, 1);
-            //printf("%d\n", val);
-            
-	    //printf("row: %d, col: %d\n", r, c);
-            if(val < score) {
-                //assign_best(val, score, best_row, r, best_col, c);
-                score = val; //New lowest opponent move
-                best_row = r;
-                best_col = c;
-                printf("best row: %d\n best col: %d\n", best_row, best_col);
-            }*/
+            /*valid_moves(&tempBoard, tempMoves, opponent);
+
+
+            //Find score for opponent's best move
+                int val = best(&tempBoard, tempMoves, opponent, 1);
+                //printf("%d\n", val);
+
+            //printf("row: %d, col: %d\n", r, c);
+                if(val < score) {
+                    //assign_best(val, score, best_row, r, best_col, c);
+                    score = val; //New lowest opponent move
+                    best_row = r;
+                    best_col = c;
+                    printf("best row: %d\n best col: %d\n", best_row, best_col);
+                }*/
         }
     }
-    //printf("best row: %d best col: %d\n", best_row, best_col);
+    
+    printf("best row: %d best col: %d best score: %d\n", best_row, best_col, max);
 
     make_move(board, best_row, best_col, player);
 }

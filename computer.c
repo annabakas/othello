@@ -88,15 +88,20 @@ void decision(othello_board_t *board, int moves[][SIZE], char player) {
             //Make valid move onto temporary board
             make_move(&tempBoard, r, c, player);
 
+            //Score for each valid move
             int tempScore = getScore(&tempBoard, player);
-	    int oppScore = getScore(&tempBoard, opponent);
+	    printf("Score for Valid Move #%d: %d\n", r, tempScore);
+            //Score for opponent after valid move
+            int oppScore = getScore(&tempBoard, opponent);
+	    printf("Score for Opp: %d\n", oppScore);
 
-            if(tempScore > max) {
+            if(heuristic(&tempBoard, player) > 0) {
                 max = tempScore;
-		if(max >= oppScore){
-			best_row = r;
-			best_col = c;
-		}
+                //If computer's best score is > human player's score, mark that row and col as best
+                if(max >= oppScore) {
+                    best_row = r;
+                    best_col = c;
+                }
             }
 
             //printf("Temporary Move #%d\n", r);
@@ -123,7 +128,7 @@ void decision(othello_board_t *board, int moves[][SIZE], char player) {
                 }*/
         }
     }
-    
+
     printf("best row: %d best col: %d best score: %d\n", best_row, best_col, max);
 
     make_move(board, best_row, best_col, player);
