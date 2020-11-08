@@ -67,6 +67,15 @@ void best_coord(int best_row, int best_col, int r, int c) {
     best_col = c;
 }
 
+int set_high(int tempScore, int max){
+	if(tempScore > max){
+		return 0;
+	}
+	else{
+		return 1;
+	}
+}
+
 void decision(othello_board_t *board, int moves[][SIZE], char player) {
     //Set opponent
     char opponent = set_opponent(player);
@@ -97,7 +106,7 @@ void decision(othello_board_t *board, int moves[][SIZE], char player) {
             int tempScore = getScore(&tempBoard, player);
 
             //Use row and column that produces highest score
-            if(tempScore > max) {
+            if(set_high(tempScore, max) == 0) {
                 max = tempScore;
                 best_row = r;
                 best_col = c;

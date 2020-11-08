@@ -213,6 +213,23 @@ TEST(ComputerTests, Copied) {
     ASSERT_STREQ(pieceB,player_B_init2);
 }
 
+//Testing that if temporary score from valid move is greater than max to update max score
+TEST(ComputerTests, SetHighScore) {
+    int tempScore = 10;
+    int max = 3;
+
+    ASSERT_EQ(0, set_high(tempScore, max));
+}
+
+//Testing that if temporary score from valid move is less than max then don't update max score
+TEST(ComputerTests, NotHighScore) {
+    int tempScore = 1;
+    int max = 3;
+
+    ASSERT_EQ(1, set_high(tempScore, max));
+}
+
+
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
