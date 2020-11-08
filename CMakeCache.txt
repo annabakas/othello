@@ -145,7 +145,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=gameboard_demo
+CMAKE_PROJECT_NAME:STATIC=othello
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
@@ -235,6 +235,12 @@ gameboard_demo_BINARY_DIR:STATIC=/home/annabakas/othello-project-annabakas
 
 //Value Computed by CMake
 gameboard_demo_SOURCE_DIR:STATIC=/home/annabakas/othello-project-annabakas
+
+//Value Computed by CMake
+othello_BINARY_DIR:STATIC=/home/annabakas/othello-project-annabakas
+
+//Value Computed by CMake
+othello_SOURCE_DIR:STATIC=/home/annabakas/othello-project-annabakas
 
 
 ########################

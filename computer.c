@@ -79,7 +79,7 @@ void decision(othello_board_t *board, int moves[][SIZE], char player) {
     //Go through all valid moves
     for(int r = 0; r < SIZE; r++) {
         for(int c = 0; c < SIZE; c++) {
-            if(moves[r][c] == 0) {
+            if(!moves[r][c]) {
                 continue;
             }
             //Copy board into tempBoard
@@ -101,9 +101,9 @@ void decision(othello_board_t *board, int moves[][SIZE], char player) {
                 best_col = c;
 
             }
-	    else{
-		    printf("Else statement from computer.c\n");
-	    }
+	    
+	    //best_row = r;
+	    //best_col = c;
 
             //printf("Temporary Move #%d\n", r);
 

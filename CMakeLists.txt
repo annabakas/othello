@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.6)
 
-project("gameboard_demo")
+project("othello")
 
 if (CMAKE_VERSION VERSION_LESS "3.1")
   add_definitions(-std=c++11)

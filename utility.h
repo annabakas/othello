@@ -1,9 +1,9 @@
+#ifndef _UTILTIY_H_
+#define _UTILITY_H_
+
 #include "player.h"
 #include "gameboard.h"
 #include "logic.h"
-
-#ifndef _UTILITY_H_
-#define _UTILITY_H_
 
 #include <stdio.h>
 #include <stdio.h>
