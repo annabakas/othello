@@ -88,8 +88,8 @@ void make_move(othello_board_t *board, int r, int c, char player) {
 
                 while(1) {
                     //move_to_next(x, y, row_count, col_count);
-                    x += row_count;
-                    y += col_count;
+		    x += row_count;
+		    y += col_count;
 
                     //Move off the board? Break
                     if(off_board(x,y) == 1) {

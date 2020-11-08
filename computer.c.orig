@@ -79,7 +79,7 @@ void decision(othello_board_t *board, int moves[][SIZE], char player) {
     //Go through all valid moves
     for(int r = 0; r < SIZE; r++) {
         for(int c = 0; c < SIZE; c++) {
-            if(moves[r][c] == 0) {
+            if(!moves[r][c]) {
                 continue;
             }
             //Copy board into tempBoard
@@ -90,16 +90,14 @@ void decision(othello_board_t *board, int moves[][SIZE], char player) {
 
             //Score for each valid move
             int tempScore = getScore(&tempBoard, player);
-	    printf("Score for Valid Move #%d: %d\n", r, tempScore);
-            //Score for opponent after valid move
-            int oppScore = getScore(&tempBoard, opponent);
-	    printf("Score for Opp: %d\n", oppScore);
-
-            if(heuristic(&tempBoard, player) > 0) {
+            printf("Score for Valid Move #%d: %d\n", r, tempScore);
+            
+	    //Use row and column that produces highest score
+            if(tempScore > max) {
                 max = tempScore;
-                    best_row = r;
-                    best_col = c;
-                
+                best_row = r;
+                best_col = c;
+
             }
 
             //printf("Temporary Move #%d\n", r);
@@ -126,8 +124,5 @@ void decision(othello_board_t *board, int moves[][SIZE], char player) {
                 }*/
         }
     }
-
-    printf("best row: %d best col: %d best score: %d\n", best_row, best_col, max);
-
     make_move(board, best_row, best_col, player);
 }
