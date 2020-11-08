@@ -62,6 +62,11 @@ void assign_best(int new_score, int score, int best_row, int row, int best_col, 
     best_col = col;
 }
 
+void best_coord(int best_row, int best_col, int r, int c) {
+    best_row = r;
+    best_col = c;
+}
+
 void decision(othello_board_t *board, int moves[][SIZE], char player) {
     //Set opponent
     char opponent = set_opponent(player);
@@ -90,13 +95,12 @@ void decision(othello_board_t *board, int moves[][SIZE], char player) {
 
             //Score for each valid move
             int tempScore = getScore(&tempBoard, player);
-            
+
             //Use row and column that produces highest score
             if(tempScore > max) {
                 max = tempScore;
                 best_row = r;
                 best_col = c;
-
             }
 
             //printf("Temporary Move #%d\n", r);
