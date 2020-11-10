@@ -27,6 +27,23 @@ int heuristic(othello_board_t *board, char player) {
     return (playerScore - opponentScore);
 }
 
+void minimax(othello_board_t *board, char currentTurn, int moves[][SIZE]) {
+    char opponent = set_opponent(currentTurn);
+    int numMoves;
+    int bestMoveVal = -999999;
+    int bestX = 0;
+    int bestY = 0;
+
+    othello_board_t tempBoard;
+
+    for(int r = 0; r < SIZE; r++) {
+        for(int c = 0; c < SIZE; c++) {
+            copy_board(board, &tempBoard);
+            make_move(&tempBoard, r, c, currentTurn);
+        }
+    }
+}
+
 //Set max score
 int set_high(int tempScore, int max) {
     if(tempScore > max) {
