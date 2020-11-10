@@ -74,7 +74,8 @@ int main(void) {
             if(valid_moves(&board,moves,other)) {
                 displayBoard(&board);
                 invalid_moves = 0;
-                decision(&board, moves, other);
+                //decision(&board, moves, other);
+		minimax(&board, moves, other);
                 clear_playable(&board);
                 total_moves++;
             }

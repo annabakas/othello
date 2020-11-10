@@ -27,12 +27,59 @@ int heuristic(othello_board_t *board, char player) {
     return (playerScore - opponentScore);
 }
 
-void minimax(othello_board_t *board, char currentTurn, int moves[][SIZE]) {
+int minimaxVal(othello_board_t *tempBoard, char origTurn, char currentTurn, int search) {
+    if((search == 5)) {
+        return heuristic(tempBoard, origTurn);
+    }
+    int tempMoves[SIZE][SIZE];
+    int numMoves = valid_moves(tempBoard, tempMoves, currentTurn); 
+    int val = 0;
     char opponent = set_opponent(currentTurn);
-    int numMoves;
+    //valid_moves(tempBoard, tempMoves, currentTurn);
+
+    othello_board_t newTempBoard;
+    //No valid moves? Skip to next player
+    if(numMoves == 0) {
+        return minimaxVal(tempBoard, origTurn, opponent, search + 1);
+    }
+    else {
+        int bestMoveVal = -99999;
+        if(origTurn != currentTurn) {
+            bestMoveVal = 99999;
+        }
+
+        for(int r = 0; r < SIZE; r++) {
+            for(int c = 0; c < SIZE; c++) {
+                copy_board(tempBoard, &newTempBoard);
+                make_move(&newTempBoard, r, c, currentTurn);
+                val = minimaxVal(&newTempBoard, origTurn, opponent, search + 1);
+
+                if(origTurn == currentTurn) {
+                    if(val > bestMoveVal) {
+                        bestMoveVal = val;
+                    }
+                }
+                else {
+                    if(val < bestMoveVal) {
+                        bestMoveVal = val;
+                    }
+                }
+            }
+        }
+
+        return bestMoveVal;
+    }
+
+    return -1;
+
+}
+
+void minimax(othello_board_t *board, int moves[][SIZE], char currentTurn) {
+    char opponent = set_opponent(currentTurn);
     int bestMoveVal = -999999;
     int bestX = 0;
     int bestY = 0;
+    int val = 0;
 
     othello_board_t tempBoard;
 
@@ -40,8 +87,19 @@ void minimax(othello_board_t *board, char currentTurn, int moves[][SIZE]) {
         for(int c = 0; c < SIZE; c++) {
             copy_board(board, &tempBoard);
             make_move(&tempBoard, r, c, currentTurn);
+
+            val = minimaxVal(&tempBoard, currentTurn, opponent, 1);
+
+            if(val > bestMoveVal) {
+                bestMoveVal = val;
+                bestX = r;
+                bestY = c;
+            }
         }
     }
+
+    printf("BestX: %d BestY: %d\n", bestX, bestY);
+    make_move(board, bestX, bestY, currentTurn);
 }
 
 //Set max score
