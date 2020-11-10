@@ -55,7 +55,7 @@ int best(othello_board_t *board, int moves[][SIZE], char player, int search) {
             make_move(&tempBoard, r, c, player);
 
             newScore = getScore(&tempBoard, player);
-
+            
             if(set_high(score, newScore) == 1) {
                 score = newScore;
             }
@@ -105,14 +105,14 @@ void decision(othello_board_t *board, int moves[][SIZE], char player) {
             valid_moves(&tempBoard, tempMoves, opponent);
 
             //Find score for opponent's best move
-            val = best(&tempBoard, tempMoves, opponent, 1);
-            printf("Val: %d Best row: %d Best Col: %d\n", val, best_row, best_col);
+	    val = best(&tempBoard, tempMoves, opponent, 1);
+	    printf("Val: %d Best row: %d Best Col: %d\n", val, best_row, best_col);
 
-            if(val < score) {
-                score = val; //Computer wants to make move that results in lowest human score
-                best_row = r;
-                best_col = c;
-            }
+               if(val < score) {
+                   score = val; //Computer wants to make move that results in lowest human score
+                   best_row = r;
+                   best_col = c;
+               }
         }
     }
     printf("Lowest Human Score: %d\n", score);
