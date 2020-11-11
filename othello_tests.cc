@@ -275,6 +275,21 @@ TEST(ComputerTests, NotHighScore) {
     ASSERT_EQ(1, set_high(tempScore, max));
 }
 
+//Testing if correct difference value between players' scores is returned with initial board state
+TEST(ComputerTests, InitialHeuristic) {
+    othello_board_t board;
+    othello_new(&board);
+    ASSERT_EQ(0, heuristic(&board, PLAYER_A));
+}
+
+//Testing if correct difference value between players' scores is returned after more pieces are on the board
+TEST(ComputerTests, MoreHeuristic) {
+    othello_board_t board;
+    othello_new(&board);
+    board.board[5][6] = PLAYER_B;
+    board.board[0][0] = PLAYER_B;
+    ASSERT_EQ(2, heuristic(&board, PLAYER_B));
+}
 
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
