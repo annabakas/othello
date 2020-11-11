@@ -193,6 +193,52 @@ TEST(UtilityTests, UpdatedScore) {
     ASSERT_EQ(2, getScore(&board, PLAYER_B));
 }
 
+//Testing gameOver returns 0 if no valid moves left for either player
+TEST(UtilityTests, gameOver) {
+    othello_board_t board;
+    othello_new(&board);
+    for(int row = 0; row < SIZE; row++) {
+        for(int col = 0; col < 0; col++) {
+            board.board[row][col] = PLAYER_A;
+        }
+    }
+
+    int tempMovesA[SIZE][SIZE] = {0};
+    int tempMovesB[SIZE][SIZE] = {0};
+
+    int numMovesA = 0;
+    int numMovesB = 0;
+
+    numMovesA = valid_moves(&board, tempMovesA, PLAYER_A);
+    numMovesB = valid_moves(&board, tempMovesB, PLAYER_B);
+
+    ASSERT_EQ(0, gameOver(&board));
+}
+
+//Testing that gameOver returns 1 if either player has valid moves left
+TEST(UtilityTests, continueGame) {
+    othello_board_t board;
+    othello_new(&board);
+    for(int row = 0; row < SIZE; row++) {
+        for(int col = 0; col < SIZE; col++) {
+            if(row == 1 || row == 5) {
+                board.board[row][col] = PLAYER_A;
+            }
+        }
+    }
+
+    int tempMovesA[SIZE][SIZE] = {0};
+    int tempMovesB[SIZE][SIZE] = {0};
+
+    int numMovesA = 0;
+    int numMovesB = 0;
+
+    numMovesA = valid_moves(&board, tempMovesA, PLAYER_A);
+    numMovesB = valid_moves(&board, tempMovesB, PLAYER_B);
+
+    ASSERT_EQ(1, gameOver(&board));
+}
+
 //Testing that board was successfully copied into temporary board
 TEST(ComputerTests, Copied) {
     othello_board_t board;
