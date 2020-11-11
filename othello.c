@@ -74,33 +74,10 @@ int main(void) {
             if(valid_moves(&board,moves,other)) {
                 displayBoard(&board);
                 invalid_moves = 0;
-                //decision(&board, moves, other);
-		minimax(&board, moves, other);
+                minimax(&board, moves, other);
                 clear_playable(&board);
                 total_moves++;
             }
-            /* while(1) {
-                 prompt_move(&row, &col);
-
-                 //Decrement row and column input by one to get index value
-                 row = get_index(row);
-                 col = get_index(col);
-
-                 //If position entered is valid:
-                 //Put move on board
-                 //Clear playable moves from board
-                 //Increment totals moves by one
-                 if(is_valid_position(row,col) == 1 && moves[row][col]) {
-                     make_move(&board, row, col, other);
-                     clear_playable(&board);
-                     total_moves++;
-                     break;
-                 }
-                 else {
-                     display_invalid_coords();
-                 }
-             }
-            }*/
             else {
                 if(++invalid_moves < 2) {
                     pass_move(&again);
