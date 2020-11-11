@@ -18,5 +18,6 @@ extern int getScore(othello_board_t *board, char player);
 extern void display_score(int playerA_Score, int playerB_Score);
 extern void display_current_player(char player);
 extern void display_invalid_coords();
+extern int gameOver(othello_board_t *board);
 
 #endif

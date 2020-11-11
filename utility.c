@@ -74,3 +74,18 @@ void display_current_player(char player) {
 void display_invalid_coords() {
     printf("Those coordinates are invalid. Check the board again for valid moves.\n");
 }
+
+//Game over when no player has valid moves left
+int gameOver(othello_board_t *tempBoard) {
+    int moves1[SIZE][SIZE] = {0};
+    int moves2[SIZE][SIZE] = {0};
+    int play1Moves = valid_moves(tempBoard, moves1, PLAYER_A);
+    int play2Moves = valid_moves(tempBoard, moves2, PLAYER_B);
+
+    if((play1Moves == 0) && (play2Moves == 0)) {
+        return 0;
+    }
+    else {
+        return 1;
+    }
+}
