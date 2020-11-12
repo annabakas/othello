@@ -80,7 +80,7 @@ int main(void) {
             }
             else {
                 if(++invalid_moves < 2) {
-                    pass_move(&again);
+                    printf("You have to pass.\n");
                 }
                 else {
                     printf("Neither us us can go. Game Over.\n");

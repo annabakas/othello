@@ -194,49 +194,49 @@ TEST(UtilityTests, UpdatedScore) {
 }
 
 //Testing gameOver returns 0 if no valid moves left for either player
-TEST(UtilityTests, gameOver){
-	othello_board_t board;
-	othello_new(&board);
-	for(int row = 0; row < SIZE; row++){
-		for(int col = 0; col < 0; col++){
-			board.board[row][col] = PLAYER_A;
-		}
-	}
+TEST(UtilityTests, gameOver) {
+    othello_board_t board;
+    othello_new(&board);
+    for(int row = 0; row < SIZE; row++) {
+        for(int col = 0; col < 0; col++) {
+            board.board[row][col] = PLAYER_A;
+        }
+    }
 
-	int tempMovesA[SIZE][SIZE] = {0};
-	int tempMovesB[SIZE][SIZE] = {0};
+    int tempMovesA[SIZE][SIZE] = {0};
+    int tempMovesB[SIZE][SIZE] = {0};
 
-	int numMovesA = 0;
-	int numMovesB = 0;
+    int numMovesA = 0;
+    int numMovesB = 0;
 
-	numMovesA = valid_moves(&board, tempMovesA, PLAYER_A);
-	numMovesB = valid_moves(&board, tempMovesB, PLAYER_B);
+    numMovesA = valid_moves(&board, tempMovesA, PLAYER_A);
+    numMovesB = valid_moves(&board, tempMovesB, PLAYER_B);
 
-	ASSERT_EQ(0, gameOver(&board));
+    ASSERT_EQ(0, gameOver(&board));
 }
 
 //Testing that gameOver returns 1 if either player has valid moves left
-TEST(UtilityTests, continueGame){
-	othello_board_t board;
-	othello_new(&board);
-	for(int row = 0; row < SIZE; row++){
-		for(int col = 0; col < SIZE; col++){
-			if(row == 1 || row == 5){
-				board.board[row][col] = PLAYER_A;
-			}
-		}
-	}
+TEST(UtilityTests, continueGame) {
+    othello_board_t board;
+    othello_new(&board);
+    for(int row = 0; row < SIZE; row++) {
+        for(int col = 0; col < SIZE; col++) {
+            if(row == 1 || row == 5) {
+                board.board[row][col] = PLAYER_A;
+            }
+        }
+    }
 
-	int tempMovesA[SIZE][SIZE] = {0};
-	int tempMovesB[SIZE][SIZE] = {0};
+    int tempMovesA[SIZE][SIZE] = {0};
+    int tempMovesB[SIZE][SIZE] = {0};
 
-	int numMovesA = 0;
-	int numMovesB = 0;
+    int numMovesA = 0;
+    int numMovesB = 0;
 
-	numMovesA = valid_moves(&board, tempMovesA, PLAYER_A);
-	numMovesB = valid_moves(&board, tempMovesB, PLAYER_B);
+    numMovesA = valid_moves(&board, tempMovesA, PLAYER_A);
+    numMovesB = valid_moves(&board, tempMovesB, PLAYER_B);
 
-	ASSERT_EQ(1, gameOver(&board));
+    ASSERT_EQ(1, gameOver(&board));
 }
 
 //Testing that board was successfully copied into temporary board
@@ -275,6 +275,21 @@ TEST(ComputerTests, NotHighScore) {
     ASSERT_EQ(1, set_high(tempScore, max));
 }
 
+//Testing if correct difference value between players' scores is returned with initial board state
+TEST(ComputerTests, InitialHeuristic){
+	othello_board_t board;
+	othello_new(&board);
+	ASSERT_EQ(0, heuristic(&board, PLAYER_A));
+}
+
+//Testing if correct difference value between players' scores is returned after more pieces are on the board
+TEST(ComputerTests, MoreHeuristic){
+	othello_board_t board;
+	othello_new(&board);
+	board.board[5][6] = PLAYER_B;
+	board.board[0][0] = PLAYER_B;
+	ASSERT_EQ(2, heuristic(&board, PLAYER_B));
+}
 
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
