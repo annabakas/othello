@@ -27,6 +27,7 @@ int main(void) {
     //Initial four pieces on the board
     total_moves = 4;
 
+    //Display welcome message
     welcome();
 
     do {
@@ -74,8 +75,8 @@ int main(void) {
             if(valid_moves(&board,moves,other)) {
                 displayBoard(&board);
                 invalid_moves = 0;
-                minimax(&board, moves, other);
-                clear_playable(&board);
+                minimax(&board, moves, other); //Computer play
+                clear_playable(&board); //Clear asterisks indicating playable moves on the board
                 total_moves++;
             }
             else {
