@@ -76,6 +76,26 @@ TEST(GameboardTests, InvalidPosition) {
     ASSERT_EQ(0, is_valid_position(10,2));
 }
 
+//Testing that board was successfully copied into temporary board
+TEST(GameboardTests, Copied) {
+    othello_board_t board;
+    othello_new(&board);
+
+    othello_board_t tempBoard;
+    copy_board(&board, &tempBoard);
+
+    char pieceA[3] = "A";
+    char pieceB[3] = "B";
+    char player_A_init[3] = {tempBoard.board[3][3]};
+    char player_A_init2[3] = {tempBoard.board[4][4]};
+    char player_B_init[3] = {tempBoard.board[3][4]};
+    char player_B_init2[3] = {tempBoard.board[4][3]};
+    ASSERT_STREQ(pieceA,player_A_init);
+    ASSERT_STREQ(pieceA,player_A_init2);
+    ASSERT_STREQ(pieceB,player_B_init);
+    ASSERT_STREQ(pieceB,player_B_init2);
+}
+
 //Testing that prompted move is stored correctly
 TEST(PlayerTests, PromptMove) {
     int row = 0;
@@ -237,26 +257,6 @@ TEST(UtilityTests, continueGame) {
     numMovesB = valid_moves(&board, tempMovesB, PLAYER_B);
 
     ASSERT_EQ(1, gameOver(&board));
-}
-
-//Testing that board was successfully copied into temporary board
-TEST(ComputerTests, Copied) {
-    othello_board_t board;
-    othello_new(&board);
-
-    othello_board_t tempBoard;
-    copy_board(&board, &tempBoard);
-
-    char pieceA[3] = "A";
-    char pieceB[3] = "B";
-    char player_A_init[3] = {tempBoard.board[3][3]};
-    char player_A_init2[3] = {tempBoard.board[4][4]};
-    char player_B_init[3] = {tempBoard.board[3][4]};
-    char player_B_init2[3] = {tempBoard.board[4][3]};
-    ASSERT_STREQ(pieceA,player_A_init);
-    ASSERT_STREQ(pieceA,player_A_init2);
-    ASSERT_STREQ(pieceB,player_B_init);
-    ASSERT_STREQ(pieceB,player_B_init2);
 }
 
 //Testing that if temporary score from valid move is greater than max to update max score
