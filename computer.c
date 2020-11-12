@@ -20,6 +20,7 @@ void copy_board(othello_board_t *board, othello_board_t *tempBoard) {
 }
 
 //Returns current player's score minus opponent's score
+//The greater the number, the more attractive the move is
 int heuristic(othello_board_t *board, char player) {
     char opponent = set_opponent(player);
     int playerScore = getScore(board, player);
@@ -92,7 +93,7 @@ int minimaxVal(othello_board_t *tempBoard, char origTurn, char currentTurn, int 
 //Loops through computer's valid moves
 //Call to minimaxVal with search of 1
 //Stores best x and y coordinate
-//Makes best move on the board
+//Makes best move on the board that leads to the most points
 void minimax(othello_board_t *board, int moves[][SIZE], char currentTurn) {
     char opponent = set_opponent(currentTurn);
     int bestMoveVal = -999999;
@@ -108,7 +109,7 @@ void minimax(othello_board_t *board, int moves[][SIZE], char currentTurn) {
             if(moves[r][c] == 0) {
                 continue;
             }
-            printf("valid move: (%d,%d)\n", r, c);
+
             copy_board(board, &tempBoard);
             make_move(&tempBoard, r, c, currentTurn);
 
@@ -135,6 +136,7 @@ int set_high(int tempScore, int max) {
     }
 }
 
+//Returns score for best moev out of the valid mmoves for current player
 int best(othello_board_t *board, int moves[][SIZE], char player, int search) {
     char opponent = set_opponent(player);
     int score = 0;
@@ -162,6 +164,8 @@ int best(othello_board_t *board, int moves[][SIZE], char player, int search) {
     return score;
 }
 
+//Finds best move for computer
+//Best move is one where the opponent's best possible move score is a minimum
 void decision(othello_board_t *board, int moves[][SIZE], char player) {
     //Set opponent
     char opponent = set_opponent(player);
