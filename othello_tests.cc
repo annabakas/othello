@@ -159,7 +159,7 @@ TEST(LogicTests, FoundBlank) {
     int col = 6;
     othello_board_t board;
     othello_new(&board);
-    ASSERT_EQ(1, found_blank(&board,row,col));
+    ASSERT_EQ(1, found_blank(&board, row, col));
 }
 
 //Testing that found_blank identifies if square is not blank
@@ -169,6 +169,19 @@ TEST(LogicTests, NotBlank) {
     othello_board_t board;
     othello_new(&board);
     ASSERT_EQ(0, found_blank(&board, row, col));
+}
+
+//Testing that counter was placed on the board for current player
+TEST(LogicTests, PiecePlaced) {
+    othello_board_t board;
+    othello_new(&board);
+    int row = 5;
+    int col = 6;
+    char piece[3] = "A";
+    place_piece(&board, row, col, PLAYER_A);
+    char pieceID[3] = {board.board[row][col]};
+    ASSERT_EQ(0, found_blank(&board, row, col));
+    ASSERT_STREQ(piece, pieceID);
 }
 
 //Testing that game shouldn't quit when board isn't full AND invalid moves < 2
