@@ -26,6 +26,6 @@ extern void playable_squares(othello_board_t *board, int r, int c);
 
 extern void clear_playable(othello_board_t *board);
 
-void copy_board(othello_board_t *board, othello_board_t *tempBoard);
+extern void copy_board(othello_board_t *board, othello_board_t *tempBoard);
 #endif
 

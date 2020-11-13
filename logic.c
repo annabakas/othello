@@ -52,12 +52,6 @@ void move_to_opponent(int x, int r, int row_count, int y, int c, int col_count) 
     y = c + col_count;
 }
 
-//Update row and column search indices with row and column indices around a square
-void move_to_next(int x, int y, int row_count, int col_count) {
-    x += row_count;
-    y += col_count;
-}
-
 //Places current player's piece
 //Flips opponent's pieces to player's pieces
 void make_move(othello_board_t *board, int r, int c, char player) {
@@ -87,7 +81,6 @@ void make_move(othello_board_t *board, int r, int c, char player) {
                 move_to_opponent(x, r, row_count, y, c, col_count);
 
                 while(1) {
-                    //move_to_next(x, y, row_count, col_count);
                     x += row_count;
                     y += col_count;
 
