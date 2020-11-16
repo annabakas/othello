@@ -37,3 +37,4 @@
 * This week I am going to continue working on Milestone 3. I want to do some code clean-up and make more tests. I also want to try to start implementing a time limit for the human-computer play.
 
 # Demo
+* https://youtu.be/430wCWN436E
