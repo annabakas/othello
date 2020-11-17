@@ -24,11 +24,11 @@ int main(void) {
     unsigned int miliseconds = 0;
     unsigned int seconds = 0;
     unsigned int minutes = 0;
-    unsigned int total_time, countdown_secs, timeLeft = 0;
+    unsigned int total_time, countdown_secs, time_left = 0;
     clock_t startTime, countTime;
     countdown_secs = 60;
     startTime = clock();
-    timeLeft = countdown_secs - seconds;
+    time_left = countdown_secs - seconds;
 
     //Initialize a new gameboard
     othello_new(&board);
@@ -47,40 +47,37 @@ int main(void) {
             display_current_player(player);
             if(valid_moves(&board,moves,player)) {
                 displayBoard(&board);
-                while(timeLeft > 0) {
+		while(time_left > 0){
 
-                    while(1) {
-                        countTime = clock();
-                        miliseconds = countTime-startTime;
-                        seconds = (miliseconds/(CLOCKS_PER_SEC)) - (minutes*60);
-                        minutes = (miliseconds/(CLOCKS_PER_SEC)) / 60;
-                        timeLeft = countdown_secs-seconds;
-                        printf("You have %d seconds left\n", timeLeft);
-			
-                        prompt_move(&row, &col);
-			if(timeLeft == 30){
-				printf("You have %d seconds left\n", timeLeft);
-			}
-                        //Decrement row and column input to get index value
-                        row = get_index(row);
-                        col = get_index(col);
+                while(1) {
+			countTime = clock();
+		       miliseconds = countTime-startTime;
+	       seconds = (miliseconds/(CLOCKS_PER_SEC)) - (minutes*60);
+minutes = (miliseconds/(CLOCKS_PER_SEC)) / 60;
+timeLeft = countdown_secs-seconds;
+printf("You have %d seconds left\n", timeLeft);
+                    prompt_move(&row, &col);
 
-                        //If position entered is valid:
-                        //Put move on board
-                        //Clear playable moves from board
-                        //Increment totals moves by one
-                        if(is_valid_position(row,col) == 1 && moves[row][col]) {
-                            make_move(&board, row, col, player);
-                            clear_playable(&board);
-                            total_moves++;
-                            break;
-                        }
-                        else {
-                            display_invalid_coords();
-                        }
+                    //Decrement row and column input to get index value
+                    row = get_index(row);
+                    col = get_index(col);
+
+                    //If position entered is valid:
+                    //Put move on board
+                    //Clear playable moves from board
+                    //Increment totals moves by one
+                    if(is_valid_position(row,col) == 1 && moves[row][col]) {
+                        make_move(&board, row, col, player);
+                        clear_playable(&board);
+                        total_moves++;
+                        break;
                     }
-		    break;
+                    else {
+                        display_invalid_coords();
+                    }
                 }
+		}
+
             }
             else {
                 if(++invalid_moves < 2) {
