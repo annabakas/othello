@@ -21,15 +21,7 @@ int main(void) {
     int moves[SIZE][SIZE] = {0};
     int playerA_Score = 0;
     int playerB_Score = 0;
-    unsigned int miliseconds = 0;
-    unsigned int seconds = 0;
-    unsigned int minutes = 0;
-    unsigned int total_time, countdown_secs, timeLeft = 0;
-    clock_t startTime, countTime;
-    countdown_secs = 60;
-    startTime = clock();
-    timeLeft = countdown_secs - seconds;
-
+    
     //Initialize a new gameboard
     othello_new(&board);
 
@@ -47,20 +39,10 @@ int main(void) {
             display_current_player(player);
             if(valid_moves(&board,moves,player)) {
                 displayBoard(&board);
-                while(timeLeft > 0) {
-
                     while(1) {
-                        countTime = clock();
-                        miliseconds = countTime-startTime;
-                        seconds = (miliseconds/(CLOCKS_PER_SEC)) - (minutes*60);
-                        minutes = (miliseconds/(CLOCKS_PER_SEC)) / 60;
-                        timeLeft = countdown_secs-seconds;
-                        printf("You have %d seconds left\n", timeLeft);
-			
+                        
                         prompt_move(&row, &col);
-			if(timeLeft == 30){
-				printf("You have %d seconds left\n", timeLeft);
-			}
+			
                         //Decrement row and column input to get index value
                         row = get_index(row);
                         col = get_index(col);
@@ -78,9 +60,7 @@ int main(void) {
                         else {
                             display_invalid_coords();
                         }
-                    }
-		    break;
-                }
+                   }
             }
             else {
                 if(++invalid_moves < 2) {
