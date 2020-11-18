@@ -20,8 +20,6 @@ extern int board_full(othello_board_t *board);
 
 extern int is_valid_position(int row, int col);
 
-extern int compareBoards();
-
 extern void playable_squares(othello_board_t *board, int r, int c);
 
 extern void clear_playable(othello_board_t *board);

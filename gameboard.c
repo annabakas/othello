@@ -74,26 +74,6 @@ int is_valid_position(int row, int col) {
     }
     return 1;
 }
-/*
-//Comparing if two boards are identical
-//Return 0 if they aren't and 1 if they are
-//Prints the row and column where there are differences
-int compareBoards() {
-    int row = 0;
-    int col = 0;
-    for(row = 0; row < ROWS; row++) {
-        for(col = 0; col < COLS; col++) {
-            char b[3] = {board[row][col] -> color};
-            char c[3] = {copy[row][col] -> color};
-            if(board[row][col] -> color != copy[row][col] -> color) {
-                printf("row: %d col: %d\n", row, col);
-                return 0;
-            }
-        }
-    }
-
-    return 1;
-}*/
 
 //Mark playable squares on the board with *
 void playable_squares(othello_board_t *board, int r, int c) {

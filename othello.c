@@ -21,7 +21,7 @@ int main(void) {
     int moves[SIZE][SIZE] = {0};
     int playerA_Score = 0;
     int playerB_Score = 0;
-    
+
     //Initialize a new gameboard
     othello_new(&board);
 
@@ -35,32 +35,32 @@ int main(void) {
         playerA_Score = getScore(&board, player);
         playerB_Score = getScore(&board, other);
         display_score(playerA_Score, playerB_Score);
+
         if(start % 2 == 0) {
             display_current_player(player);
             if(valid_moves(&board,moves,player)) {
                 displayBoard(&board);
-                    while(1) {
-                        
-                        prompt_move(&row, &col);
-			
-                        //Decrement row and column input to get index value
-                        row = get_index(row);
-                        col = get_index(col);
+                while(1) {
+                    prompt_move(&row, &col);
 
-                        //If position entered is valid:
-                        //Put move on board
-                        //Clear playable moves from board
-                        //Increment totals moves by one
-                        if(is_valid_position(row,col) == 1 && moves[row][col]) {
-                            make_move(&board, row, col, player);
-                            clear_playable(&board);
-                            total_moves++;
-                            break;
-                        }
-                        else {
-                            display_invalid_coords();
-                        }
-                   }
+                    //Decrement row and column input to get index value
+                    row = get_index(row);
+                    col = get_index(col);
+
+                    //If position entered is valid:
+                    //Put move on board
+                    //Clear playable moves from board
+                    //Increment totals moves by one
+                    if(is_valid_position(row,col) == 1 && moves[row][col]) {
+                        make_move(&board, row, col, player);
+                        clear_playable(&board);
+                        total_moves++;
+                        break;
+                    }
+                    else {
+                        display_invalid_coords();
+                    }
+                }
             }
             else {
                 if(++invalid_moves < 2) {
@@ -71,6 +71,7 @@ int main(void) {
                 }
             }
         }
+
         else {
             display_current_player(other);
             if(valid_moves(&board,moves,other)) {
