@@ -11,8 +11,8 @@
 
 //Prompts player to enter coordinates for location they wish to place their piece
 void prompt_move(int *r, int *c) {
-        printf("\nEnter row [1-8] and column [1-8] separated by a single space (ex: 2 4): ");
-        scanf("%d %d", r, c);
+            printf("\nEnter row [1-8] and column [1-8] separated by a single space (ex: 2 4): ");
+            scanf("%d %d", r, c);
     fflush(stdin);
 }
 
