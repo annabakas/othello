@@ -26,7 +26,6 @@ TEST(GameboardTests, IsFull) {
             board.board[row][col] = PLAYER_A;
         }
     }
-
     ASSERT_EQ(1, board_full(&board));
 }
 
