@@ -291,6 +291,14 @@ TEST(UtilityTests, continueGame) {
     ASSERT_EQ(1, gameOver(&board));
 }
 
+//Testing that gameplay choice is stored correctly
+TEST(UtilityTests, GameChoice) {
+    char choice;
+    printf("Use A for this test.\n");
+    choice = game_choice();
+    ASSERT_EQ(choice, 'A');
+}
+
 //Testing that if temporary score from valid move is greater than max to update max score
 TEST(ComputerTests, SetHighScore) {
     int tempScore = 10;
