@@ -15,14 +15,23 @@ void welcome() {
 }
 
 //Pick type of gameplay
-void game_choice(char *choice) {
-    printf("\nTime to Pick What Kind of Game You Want to Play!\n");
-    printf("A: Human vs. Human\n");
-    printf("B: Human vs. Computer\n");
-    printf("C: Computer vs. Computer\n");
-    printf("Choice: ");
-    scanf("%c", choice);
+char game_choice() {
     fflush(stdin);
+    char choice;
+    printf("\nTime to Pick What Kind of Game You Want to Play!\n");
+    do {
+        printf("\nA: Human vs. Human\n");
+        printf("B: Human vs. Computer\n");
+        printf("C: Computer vs. Computer\n");
+        printf("\nChoice: ");
+        choice = getchar();
+        fflush(stdin);
+        printf("%c\n", choice);
+        if(choice == 'A' || choice == 'B' || choice == 'C') {
+            break;
+        }
+    } while(1);
+    return choice;
 }
 
 //Returning player who has the highest score i.e. the winner
