@@ -15,13 +15,17 @@ make
 Run `./bin/othello`
 
 ## Game Tutorial
-Othello can be played by two human players or one human player versus the computer. On every turn, the current player and both player's score are shown at the top of the screen. Players are also shown the current state of the board each turn. 
+Othello can be played by two human players, one human player versus the computer, or computer versus computer. On every turn, the current player and opponent's score are shown at the top of the screen. Players are also shown the current state of the board each turn. 
 
-To start, the board is initialized with 2 of each player's pieces at the center of the board. Valid plays are shown on the board by an asterisk mark. The player should input the position of where they want to place a piece by inputting the row and column separated by a single space (eg: 2 4).
+To start, the player is asked what kind of Othello game they want to play: human vs. human, human vs. computer, or computer vs. computer.
+
+At the start of each game, the board is initialized with 2 of each player's pieces at the center of the board. Valid plays are shown on the board by an asterisk mark. The player should input the position of where they want to place a piece by inputting the row and column separated by a single space (eg: 2 4).
 
 A valid move is one where a player flips at least one of the opponent's pieces by flanking it.
 
 The game ends when there are no moves left for both players or when the board is completely filled.
+
+At the conclusion of the game, the winner and players' final scores are shown.
 
 ## Structure
 **logic.c/h**
