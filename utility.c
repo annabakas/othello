@@ -16,20 +16,26 @@ void welcome() {
 
 //Pick type of gameplay
 char game_choice() {
-    fflush(stdin);
     char choice;
+    char lastChar;
     printf("\nTime to Pick What Kind of Game You Want to Play!\n");
     do {
         printf("\nA: Human vs. Human\n");
         printf("B: Human vs. Computer\n");
         printf("C: Computer vs. Computer\n");
         printf("\nChoice: ");
-        choice = getchar();
         fflush(stdin);
-        printf("%c\n", choice);
+        lastChar = getchar();
+        getchar();
+        if(lastChar == '\n') {
+            break;
+        }
+        choice = lastChar;
         if(choice == 'A' || choice == 'B' || choice == 'C') {
             break;
         }
+        printf("\nInvalid Choice. Choose A, B, or C.\n");
+        fflush(stdin);
     } while(1);
     return choice;
 }
