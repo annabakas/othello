@@ -292,11 +292,31 @@ TEST(UtilityTests, continueGame) {
 }
 
 //Testing that gameplay choice is stored correctly
-TEST(UtilityTests, GameChoice){
-	char choice;
-	printf("Use A for this test.\n");
-	choice = game_choice();
-	ASSERT_EQ(choice, 'A');
+TEST(UtilityTests, GameChoice) {
+    char choice;
+    printf("Use A for this test.\n");
+    choice = game_choice();
+    ASSERT_EQ(choice, 'A');
+}
+
+//Testing that if gameplay choice is A, B, or C then return 0
+TEST(UtilityTests, ValidChoice){
+	char letter = 'A';
+	char letter2 = 'B';
+	char letter3 = 'C';
+	ASSERT_EQ(0, valid_choice(letter));
+	ASSERT_EQ(0, valid_choice(letter2));
+	ASSERT_EQ(0, valid_choice(letter3));
+}
+
+//Testing that if gameplay choice is not A, B, or C then return 1
+TEST(UtilityTests, InvalidChoice){
+	char letter = 'W';
+	char letter2 = 'a';
+	char letter3 = '5';
+	ASSERT_EQ(1, valid_choice(letter));
+	ASSERT_EQ(1, valid_choice(letter2));
+	ASSERT_EQ(1, valid_choice(letter3));
 }
 
 //Testing that if temporary score from valid move is greater than max to update max score

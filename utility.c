@@ -14,6 +14,17 @@ void welcome() {
     printf("Welcome to Othello! Playable squares are marked with an asterisk (*)\n");
 }
 
+//Check valid gameplay choice
+//Return 1 if invalid, 0 if valid
+int valid_choice(char letter) {
+    if(letter == 'A' || letter == 'B' || letter == 'C') {
+        return 0;
+    }
+    else {
+        return 1;
+    }
+}
+
 //Pick type of gameplay
 char game_choice() {
     char choice;
@@ -31,7 +42,7 @@ char game_choice() {
             break;
         }
         choice = lastChar;
-        if(choice == 'A' || choice == 'B' || choice == 'C') {
+        if(valid_choice(choice) == 0) {
             break;
         }
         printf("\nInvalid Choice. Choose A, B, or C.\n");

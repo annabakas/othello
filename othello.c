@@ -121,6 +121,7 @@ int main(void) {
             }
             start++; // Switching between player A and player B
         } while(total_moves < SIZE*SIZE && invalid_moves<2);
+        printf("\nCongrats Player %c, you won!\n",get_winner(playerA_Score, playerB_Score));
     }
     else if(chooseGame == 'B') {
         printf("\nWelcome to Human vs. Computer Othello! The Human player will go first.\n");
@@ -188,9 +189,10 @@ int main(void) {
             }
             start++; // Switching between player A and player B
         } while(quit(&board, invalid_moves) == 1);
+        printf("\nCongrats Player %c, you won!\n",get_winner(playerA_Score, playerB_Score));
     }
     else {
-        printf("\nWelcome to Computer vs. Computer Othello! The Human player will go first.\n");
+        printf("\nWelcome to Computer vs. Computer Othello!\n");
         do {
             playerA_Score = getScore(&board, player);
             playerB_Score = getScore(&board, other);
@@ -234,7 +236,6 @@ int main(void) {
             }
             start++; // Switching between player A and player B
         } while(quit(&board, invalid_moves) == 1);
+        printf("\nCongrats Player %c, you won!\n",get_winner(playerA_Score, playerB_Score));
     }
-
-    printf("\nCongrats Player %c, you won!\n",get_winner(playerA_Score, playerB_Score));
 }
