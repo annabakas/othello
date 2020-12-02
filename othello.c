@@ -38,9 +38,11 @@ int main(void) {
     //Display welcome message
     welcome();
 
-    //Display gameplay options
+    //Prompt user to choose gameplay
+    //Store choice in chooseGame
     chooseGame = game_choice();
 
+    //Use chooseGame value to pick gameplay with if statements
     if(chooseGame == 'A') {
         printf("\nWelcome to Human vs. Human Othello! Player A will go first.\n");
         do {
@@ -121,6 +123,7 @@ int main(void) {
             }
             start++; // Switching between player A and player B
         } while(total_moves < SIZE*SIZE && invalid_moves<2);
+
         printf("\nCongrats Player %c, you won!\n",get_winner(playerA_Score, playerB_Score));
     }
     else if(chooseGame == 'B') {
@@ -189,6 +192,7 @@ int main(void) {
             }
             start++; // Switching between player A and player B
         } while(quit(&board, invalid_moves) == 1);
+
         printf("\nCongrats Player %c, you won!\n",get_winner(playerA_Score, playerB_Score));
     }
     else {
@@ -236,6 +240,7 @@ int main(void) {
             }
             start++; // Switching between player A and player B
         } while(quit(&board, invalid_moves) == 1);
+
         printf("\nCongrats Player %c, you won!\n",get_winner(playerA_Score, playerB_Score));
     }
 }
