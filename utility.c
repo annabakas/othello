@@ -14,7 +14,7 @@ void welcome() {
     printf("Welcome to Othello! Playable squares are marked with an asterisk (*)\n");
 }
 
-//Check valid gameplay choice
+//Takes in user's gameplay choice and checks if it's a valid one
 //Return 1 if invalid, 0 if valid
 int valid_choice(char letter) {
     if(letter == 'A' || letter == 'B' || letter == 'C') {
@@ -25,7 +25,10 @@ int valid_choice(char letter) {
     }
 }
 
-//Pick type of gameplay
+//Prompt user to pick what type of game they want to play
+//Check if user's choice is a valid one
+//If valid, return choice
+//If invalid, prompt user again to enter valid choice
 char game_choice() {
     char choice;
     char lastChar;
