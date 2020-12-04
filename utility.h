@@ -14,6 +14,7 @@ extern void welcome();
 extern int valid_choice(char letter);
 extern char game_choice();
 extern char get_winner(int playerA_Score, int playerB_Score);
+extern int who_won(int playerA_Score, int playerB_Score);
 extern int quit(othello_board_t *board, int invalid_moves);
 extern int get_index(int x);
 extern int getScore(othello_board_t *board, char player);

@@ -66,13 +66,13 @@ char get_winner(int playerA_Score, int playerB_Score) {
 
 //Return 1 if player A won
 //Return 0 if player B won
-int who_won(int playerA_Score, int playerB_Score) {
-    if(get_winner(playerA_Score, playerB_Score) == PLAYER_A) {
-        return 1;
-    }
-    else {
-        return 0;
-    }
+int who_won(int playerA_Score, int playerB_Score){
+	if(get_winner(playerA_Score, playerB_Score) == PLAYER_A){
+		return 1;
+	}
+	else{
+		return 0;
+	}
 }
 
 //Return 1 if board is not full and invalid moves are less than 2

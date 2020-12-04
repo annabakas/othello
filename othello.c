@@ -130,7 +130,7 @@ int main(void) {
             } while(total_moves < SIZE*SIZE && invalid_moves<2);
 
             printf("\nCongrats Player %c, you won!\n",get_winner(playerA_Score, playerB_Score));
-            if(get_winner(playerA_Score, playerB_Score) == PLAYER_A) {
+            if(who_won(playerA_Score, playerB_Score) == 1) {
                 gamesWon_A += 1;
             }
             else {
