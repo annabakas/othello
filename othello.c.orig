@@ -128,7 +128,7 @@ int main(void) {
             } while(total_moves < SIZE*SIZE && invalid_moves<2);
 
             printf("\nCongrats Player %c, you won!\n",get_winner(playerA_Score, playerB_Score));
-            fflush(stdin);
+	    fflush(stdin);
             printf("Do you want to play again? (y/n): ");
             scanf(" %c", &again);
         } while(again == 'y');
