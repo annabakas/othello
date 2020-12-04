@@ -319,6 +319,51 @@ TEST(UtilityTests, InvalidChoice) {
     ASSERT_EQ(1, valid_choice(letter3));
 }
 
+//Testing that who_won() returns and increments game total if player A wins
+TEST(UtilityTests, PlayerAWon) {
+    int games_A = 0;
+    int games_B = 0;
+    int playerA_Score = 0;
+    int playerB_Score = 0;
+    
+    othello_board_t board;
+    othello_new(&board);
+
+    board.board[7][7] = PLAYER_A;
+    playerA_Score = getScore(&board, PLAYER_A);
+    playerB_Score = getScore(&board, PLAYER_B);
+
+    if(who_won(playerA_Score, playerB_Score) == 1) {
+        games_A += 1;
+    }
+
+    ASSERT_EQ(1, games_A);
+    ASSERT_EQ(0, games_B);
+}
+
+//Testing that who_won() returns and increments game total if player B wins
+TEST(UtilityTests, PlayerBWon) {
+    int games_A = 0;
+    int games_B = 0;
+    int playerA_Score = 0;
+    int playerB_Score = 0;
+    
+    othello_board_t board;
+    othello_new(&board);
+
+    board.board[1][1] = PLAYER_B;
+    board.board[2][3] = PLAYER_B;
+    playerA_Score = getScore(&board, PLAYER_A);
+    playerB_Score = getScore(&board, PLAYER_B);
+
+    if(who_won(playerA_Score, playerB_Score) == 0) {
+        games_B += 1;
+    }
+
+    ASSERT_EQ(1, games_B);
+    ASSERT_EQ(0, games_A);
+}
+
 //Testing that if temporary score from valid move is greater than max to update max score
 TEST(ComputerTests, SetHighScore) {
     int tempScore = 10;
