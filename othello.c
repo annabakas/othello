@@ -26,6 +26,8 @@ int main(void) {
     time_t endwait;
     time_t startTime = time(NULL);
     time_t duration = 30;
+    int gamesWon_A = 0;
+    int gamesWon_B = 0;
 
     endwait = startTime + duration;
 
@@ -128,10 +130,18 @@ int main(void) {
             } while(total_moves < SIZE*SIZE && invalid_moves<2);
 
             printf("\nCongrats Player %c, you won!\n",get_winner(playerA_Score, playerB_Score));
+            if(get_winner(playerA_Score, playerB_Score) == PLAYER_A) {
+                gamesWon_A += 1;
+            }
+            else {
+                gamesWon_B += 1;
+            }
             fflush(stdin);
             printf("Do you want to play again? (y/n): ");
             scanf(" %c", &again);
         } while(again == 'y');
+        printf("\nPlayer A Won %d Games\n", gamesWon_A);
+        printf("Player B Won %d Games\n", gamesWon_B);
     }
     else if(chooseGame == 'B') {
         printf("\nWelcome to Human vs. Computer Othello! The Human player will go first.\n");
