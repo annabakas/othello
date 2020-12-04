@@ -125,11 +125,11 @@ TEST(PlayerTests, PlayAgain) {
 
 //Testing that not playing again (n) is stored correctly
 //ASCII code of 'n' is 110
-TEST(PlayerTests, NoPlayAgain) {
-    char again = 0;
-    printf("\nAnswer n for this test\n");
-    play_again(&again);
-    ASSERT_EQ(110, again);
+TEST(PlayerTests, NoPlayAgain){
+	char again = 0;
+	printf("\nAnswer n for this test\n");
+	play_again(&again);
+	ASSERT_EQ(110, again);
 }
 
 //Testing that opponent of current player is set correctly

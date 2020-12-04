@@ -11,5 +11,6 @@ extern void init_moves(int moves[][SIZE]);
 extern int avoid(int r, int c, int row_count, int col_count);
 extern char set_opponent(char player);
 extern void pass_move(char *again);
+extern void play_again(char *again);
 
 #endif

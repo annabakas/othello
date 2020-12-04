@@ -24,10 +24,10 @@ void pass_move(char *again) {
 }
 
 //Prompt user to enter if they want to play again or not
-void play_again(char *again) {
-    fflush(stdin);
-    printf("\nDo you want to play again? (y/n): ");
-    scanf(" %c", again);
+void play_again(char *again){
+	fflush(stdin);
+	printf("Do you want to play again? (y/n): ");
+	scanf(" %c", &again);
 }
 
 //Print out possible moves for player to make at their turn
