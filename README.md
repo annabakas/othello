@@ -25,7 +25,7 @@ A valid move is one where a player flips at least one of the opponent's pieces b
 
 The game ends when there are no moves left for both players or when the board is completely filled.
 
-At the conclusion of the game, the winner and players' final scores are shown.
+At the conclusion of the game, the winner and players' final scores are shown. In human vs. human gameplay, players have the option to play multiple games. 
 
 ## Structure
 **logic.c/h**
