@@ -95,6 +95,27 @@ TEST(GameboardTests, Copied) {
     ASSERT_STREQ(pieceB,player_B_init2);
 }
 
+//Testing that playable squares are cleared from board
+TEST(GameboardTests, ClearPlayable) {
+    othello_board_t board;
+    othello_new(&board);
+    board.board[4][7] = PLAYABLE;
+    board.board[1][1] = PLAYABLE;
+    board.board[0][7] = PLAYABLE;
+    char blank[3] = " ";
+
+    clear_playable(&board);
+
+    for(int r = 0; r < SIZE; r++) {
+        for(int c = 0; c < SIZE; c++) {
+            if((r == 4 && c == 7) || (r == 1 && c == 1) || (r == 0 && c == 7)) {
+                char piece[3] = {board.board[r][c]};
+                ASSERT_STREQ(blank, piece);
+            }
+        }
+    }
+}
+
 //Testing that prompted move is stored correctly
 TEST(PlayerTests, PromptMove) {
     int row = 0;
@@ -356,6 +377,7 @@ TEST(UtilityTests, PlayerAWon) {
         games_A += 1;
     }
 
+    ASSERT_EQ(1, who_won(playerA_Score, playerB_Score));
     ASSERT_EQ(1, games_A);
     ASSERT_EQ(0, games_B);
 }
@@ -379,6 +401,7 @@ TEST(UtilityTests, PlayerBWon) {
         games_B += 1;
     }
 
+    ASSERT_EQ(0, who_won(playerA_Score, playerB_Score));
     ASSERT_EQ(1, games_B);
     ASSERT_EQ(0, games_A);
 }
