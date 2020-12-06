@@ -210,6 +210,16 @@ TEST(PlayerTests, InitMoves) {
     }
 }
 
+//Testing that correct number of valid moves are returned
+TEST(PlayerTests, NumberOfValidMoves) {
+    othello_board_t board;
+    othello_new(&board);
+    int moves[SIZE][SIZE] = {0};
+
+    ASSERT_EQ(4, valid_moves(&board, moves, PLAYER_A));
+    ASSERT_EQ(4, valid_moves(&board, moves, PLAYER_B));
+}
+
 //Testing thtat correct winner is returned
 TEST(LogicTests, Winner) {
     int play1 = 10;
