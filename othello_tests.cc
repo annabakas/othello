@@ -95,6 +95,26 @@ TEST(GameboardTests, Copied) {
     ASSERT_STREQ(pieceB,player_B_init2);
 }
 
+//Testing that playable squares are marked correctly
+TEST(GameboardTests, MarkPlayable) {
+    othello_board_t board;
+    othello_new(&board);
+    char play[3] = "*";
+
+    playable_squares(&board, 0, 0);
+    playable_squares(&board, 7, 7);
+    playable_squares(&board, 8, 2);
+
+    for(int r = 0; r < SIZE; r++) {
+        for(int c = 0; c < SIZE; c++) {
+            if((r == 0 && c == 0) || (r == 7 && c == 7) || (r == 8 && c == 2)) {
+                char piece[3] = {board.board[r][c]};
+                ASSERT_STREQ(play, piece);
+            }
+        }
+    }
+}
+
 //Testing that playable squares are cleared from board
 TEST(GameboardTests, ClearPlayable) {
     othello_board_t board;
