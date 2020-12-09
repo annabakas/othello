@@ -436,22 +436,6 @@ TEST(UtilityTests, PlayerBWon) {
     ASSERT_EQ(0, games_A);
 }
 
-//Testing that if temporary score from valid move is greater than max to update max score
-TEST(ComputerTests, SetHighScore) {
-    int tempScore = 10;
-    int max = 3;
-
-    ASSERT_EQ(0, set_high(tempScore, max));
-}
-
-//Testing that if temporary score from valid move is less than max then don't update max score
-TEST(ComputerTests, NotHighScore) {
-    int tempScore = 1;
-    int max = 3;
-
-    ASSERT_EQ(1, set_high(tempScore, max));
-}
-
 //Testing if correct difference value between players' scores is returned with initial board state
 TEST(ComputerTests, InitialHeuristic) {
     othello_board_t board;
